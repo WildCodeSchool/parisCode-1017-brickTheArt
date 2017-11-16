@@ -7,9 +7,9 @@ use Twig_Environment;
 use Twig_Extension_Debug;
 
 /**
- * Class Controller
+ * Class ManagerController
  */
-class Controller
+class ManagerController
 {
 	/**
 	 * @var Twig_Environment
@@ -17,7 +17,7 @@ class Controller
 	protected $twig;
 
 	/**
-	 * Twig Controller constructor.
+	 * Twig ManagerController constructor.
 	 */
 	public function __construct()
 	{

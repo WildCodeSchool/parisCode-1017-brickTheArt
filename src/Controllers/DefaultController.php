@@ -5,36 +5,44 @@ namespace BrickTheArt\Controllers;
 use BrickTheArt\Model\Repository\UserManager;
 
 /**
- * Class DefaultController
- * @package MyApp\Controller
+ * Class DefaultManagerController
+ * @package MyApp\ManagerController
  */
-class DefaultController extends Controller
+class DefaultController extends ManagerController
 {
 	/**
-	 * Render index
+	 * Render home
 	 */
 	public function indexAction(){
-		$userManager = new UserManager();
-		$allUsers = $userManager->getAll();
 
-		return $this->twig->render('user/home.html.twig', array(
-			'allUsers' => $allUsers
-		));
+		return $this->twig->render('user/home.html.twig');
 	}
 
 	/**
 	 * @return string
 	 */
-	public function showOneAction(){
-		$id = $_GET['id'];
+	public function conceptAction(){
 
-		if (is_numeric($id)){
-			$userManager = new UserManager();
-			$user = $userManager->getOne($id);
+			return $this->twig->render('user/concept.html.twig');
 
-			return $this->twig->render('user/showOne.html.twig', array(
-				'user' => $user
-			));
-		}
 	}
+
+    /**
+     * @return string
+     */
+    public function bricktourAction(){
+
+        return $this->twig->render('user/bricktour.html.twig');
+
+    }
+
+    /**
+     * @return string
+     */
+    public function contactAction(){
+
+        return $this->twig->render('user/contact.html.twig');
+
+    }
+
 }
