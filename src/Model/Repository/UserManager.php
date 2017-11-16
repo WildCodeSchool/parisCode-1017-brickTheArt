@@ -1,9 +1,9 @@
 <?php
 
-namespace MyApp\Model\Repository;
+namespace BrickTheArt\Model\Repository;
 
 use PDO;
-use MyApp\Model\Entity\User;
+use BrickTheArt\Model\Entity\User;
 
 /**
  * Class UserManager

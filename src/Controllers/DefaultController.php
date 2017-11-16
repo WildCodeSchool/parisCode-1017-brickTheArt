@@ -1,8 +1,8 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace BrickTheArt\Controllers;
 
-use MyApp\Model\Repository\UserManager;
+use BrickTheArt\Model\Repository\UserManager;
 
 /**
  * Class DefaultController
