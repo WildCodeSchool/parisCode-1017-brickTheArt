@@ -1,17 +1,10 @@
 {
-    "name": "wcs/simple_mvc",
+    "name": "anysiabeauzel/paris-code-1017-brick-the-art",
     "authors": [
         {
-            "name": "Florian Grandjean",
-            "email": "florian.pdf@gmail.com"
+            "name": "Anysia",
+            "email": "abeauzel@orange.fr"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "MyApp\\": "src/"
-        }
-    },
-    "require": {
-        "twig/twig": "^2.0"
-    }
+    "require": {}
 }

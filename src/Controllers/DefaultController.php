@@ -6,7 +6,7 @@ use MyApp\Model\Repository\UserManager;
 
 /**
  * Class DefaultController
- * @package MyApp\Controllers
+ * @package MyApp\Controller
  */
 class DefaultController extends Controller
 {
