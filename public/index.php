@@ -23,7 +23,7 @@ if (isset ($_GET['page'])) {
 
         }
 
-    if ($_GET['page'] == 'contact') {
+        if ($_GET['page'] == 'contact') {
         $defaultController = new DefaultController();
         echo $defaultController->contactAction();
 
