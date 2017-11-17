@@ -1,15 +1,40 @@
 <!doctype html>
 <html lang="fr">
 <head>
+    <!-- Favicon -->
+
+    <link rel="icon" type="image/png" sizes="96x96" href="../public/assets/pictures/favicon-96x96.png">
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My APP</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>BrickTheArt</title>
 </head>
+
 <body>
+
+<header class="container">
+    <div class="in-header">
+
+<img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
+
+<div>
+                <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php?page=concept">Concept</a></li>
+                <li><a href="index.php?page=bricktour">BrickTour</a></li>
+                <li><a href="index.php?page=contact">Contact</a></li>
+                </ul>
+
+</div>
+    </div>
+</header
     {% block body %}
 
     {% endblock %}
+
 </body>
 </html>

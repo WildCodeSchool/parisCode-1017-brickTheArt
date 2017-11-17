@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Model\Entity;
+namespace BrickTheArt\Model\Entity;
 
 /**
  * Class User
