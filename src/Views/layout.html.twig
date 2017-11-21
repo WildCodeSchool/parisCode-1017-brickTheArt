@@ -1,39 +1,134 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!doctype html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="96x96" href="../public/assets/pictures/favicon-96x96.png">
+        <!-- FAVICON -->
+       <link rel="icon" type="image/png" sizes="96x96" href="../public/assets/pictures/favicon-96x96.png">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>BrickTheArt</title>
-</head>
+        <!-- BOOTSTRAP LIBRARY-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<body>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../public/assets/css/style.css" />
 
+        <!--CSS Social Icons -->
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <!--Fonts-->
+
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+        <title>BrickTheArt</title>
+
+
+    </head>
+
+        <body>
+
+
+            <!-- HEADER -->
 <header class="container">
+
     <div class="in-header">
 
-<img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
+        <img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
 
-<div>
-                <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?page=concept">Concept</a></li>
-                <li><a href="index.php?page=bricktour">BrickTour</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-                </ul>
 
+        <!-- NAVBAR -->
+
+        <nav class="navbar navbar-inverse navbar_custom">
+            <div class="container">
+
+                <div class="navbar-header navbar_custom">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <a class="navbar-brand" href="index.php">BrickTheArt</a>
+
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar_custom">
+                        <li class="layout_nav_item"><a href="index.php">Home</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=concept">Concept</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=bricktour">BrickTour</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+</header>
+<!-- END HEADER -->
+
+
+
+            <div class="container">
+
+                {% block body %}
+
+                {% endblock %}
+
+            </div>
+
+
+
+            <!--Footer-->
+                <div class="container">
+                        <footer id="Footer">
+                                    <div class="row">
+
+                                        {#first column#}
+                                        <div class="col-sm-4 Col">
+                                                <div class="list-brick-the-art">
+                                            <h5>Brick The Art</h5>
+                                                <ul>
+                                                    <li><a href="index.php">Home</a></li>
+                                                    <li><a href="index.php?page=concept">Le concept</a></li>
+                                                    <li><a href="index.php?page=bricktour">Brick Tour</a></li>
+                                                </ul>
+                                                </div>
+                                        </div>
+
+                                        {#second column#}
+                                        <div class="col-sm-4 Col">
+                                            <div class="social-networks">
+                                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                                <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+
+                                        {#third column#}
+                                        <div class="col-sm-4 Col">
+                                            <h5>Contact</h5>
+                                                <ul>
+                                                    <li>+33 (0)1 44 00 00 00</li>
+                                                    <li>11 rue de Poissy 75005 Paris</li>
+                                                    <li><a href="index.php?page=contact">Nous contacter</a></li>
+                                                </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="footer-copyright">
+                                        <p> © 2017 Copyright Lego </p>
+                                        <p> Made by CAC </p>
+                                    </div>
+                                    
+                        </footer>
 </div>
-    </div>
-</header
-    {% block body %}
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    {% endblock %}
 
 </body>
 </html>
