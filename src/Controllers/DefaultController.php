@@ -43,6 +43,18 @@ class DefaultController extends ManagerController
 
         return $this->twig->render('user/contact.html.twig');
 
+        //gestion des erreurs, avec au départ $errors = 0. (header:"Location:index.php?page=success", etc)
+
     }
+
+    /**
+     * @return string
+     */
+
+    /*public function successAction(){
+
+        return $this->twig->render('user/contact_success.html.twig')
+
+    }*/
 
 }
