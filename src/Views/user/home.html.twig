@@ -1,57 +1,58 @@
-    {% extends 'layout.html.twig' %}
+        {% extends 'layout.html.twig' %}
 
 
-    {% block head %}
+        {% block head %}
 
-        <title>Accueil-Brick The Art</title>
+            <title>Accueil-Brick The Art</title>
+
+        {% endblock %}
+
+
+        {% block body %}
+
+            {# INTRODUCTION Titre + Texte #}
+
+            <div class="container">
+
+            <section class="home_introduction">
+
+                <h2 class="section_title">Informations</h2>
+
+                <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+            </section>
+
+            {# LES DERNIERES EXPOSITIONS Titre + Image + Titres images #}
+
+            <section class="home_highlights">
+
+                    <h2 class="section title">Nos derniers passages</h2>
+
+
+
+                            <div class="home_headline">
+
+                                <div class="row">
+
+                                    <div class = "col-sm-6">
+                                        <figure>
+                                            <h3>Titre de l'image</h3>
+                                            <a href="https://placeholder.com"><img src="http://via.placeholder.com/555x420"></a>
+                                        </figure>
+                                    </div>
+
+                                    <div class = "col-sm-6">
+                                        <figure>
+                                            <h3>Titre de l'image</h3>
+                                            <a href="https://placeholder.com"><img src="http://via.placeholder.com/555x420"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+
+
+            </section>
+            </div>
 
     {% endblock %}
-
-
-    {% block body %}
-
-        {# INTRODUCTION Titre + Texte #}
-
-        <section class="home_introduction">
-
-            <section class="section title">
-            <h2>Informations</h2>
-            </section>
-
-            <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-        </section>
-
-        {# LES DERNIERES EXPOSITIONS Titre + Image + Titres images #}
-
-        <section class="home_highlights">
-
-            <section class="section title">
-                <h2>Nos derniers passages</h2>
-            </section>
-
-                <div class="home_headline">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class = "col-sm-6">
-                                <figure>
-                                    <a href="https://placeholder.com"><img src="http://via.placeholder.com/555x420"></a>
-                                    <h1>Titre de l'image</h1>
-                                </figure>
-                            </div>
-
-                            <div class = "col-sm-6">
-                                <figure>
-                                    <a href="https://placeholder.com"><img src="http://via.placeholder.com/555x420"></a>
-                                    <h1>Titre de l'image</h1>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-        </section>
-
-{% endblock %}
