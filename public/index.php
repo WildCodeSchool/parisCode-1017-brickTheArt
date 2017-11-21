@@ -29,4 +29,8 @@ if (isset ($_GET['page'])) {
 
     }
 
+        if ($_GET['page'] == 'success') {
+        $defaultController = new DefaultController();
+        echo $defaultController->successAction();
+        }
     }
