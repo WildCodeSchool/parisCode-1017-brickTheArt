@@ -1,5 +1,22 @@
 {% extends 'layout.html.twig' %}
 
+{% import 'user/form.html.twig' as form %}
+
 {% block body %}
-    <h1>Contact</h1>
+
+    <h2 class="section_title">Nous contacter</h2>
+
+    <p>Posez-nous toutes vos questions et donnez-nous des idées pour nos prochaines créations !</p>
+
+    <form action="?id=contact" method="post">
+            {{ form.input('firstname', 'Votre prénom', 'text') }}
+            {{ form.input('lastname', 'Votre nom de famille', 'text') }}
+            {{ form.input('email', 'Votre email', 'email') }}
+            {{ form.input('city', 'Votre ville ou votre code postal', 'text') }}
+            {{ form.input('message', 'Votre message', 'text') }}
+
+            <input type="submit" value="Envoyer">
+    </form>
+
+
 {% endblock %}
