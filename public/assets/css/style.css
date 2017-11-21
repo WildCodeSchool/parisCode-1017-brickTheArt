@@ -17,6 +17,9 @@
 ==================================================
 \************************************************/
 
+body {
+    font-family: 'Lato', sans-serif;
+}
 
 /************************************************\
 ==================================================
@@ -24,6 +27,56 @@
 ==================================================
 \************************************************/
 
+/* quand l'écran est grand */
+@media screen and (min-width: 768px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+.navbar-toggle {
+    background-color: black;
+}
+
+.navbar {
+    background-color: #f7c001;
+    border-color: white;
+}
+
+.navbar-custom {
+    background-color: #f7c001 !important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #000;
+    font-family: 'Lato';
+    font-size: 26px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #000;
+    font-family: 'Lato';
+    font-size: 22px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #000;
+}
+
+.navbar-brand:hover {
+    color: #000 !important;
+}
+
+.container_header {
+    width:100%;
+}
+
+.layout_nav_item:hover {
+    border-left: 5px solid #000;
+}
+
+.layout_nav_item {
+    border-left: 5px solid #f7c001;
+}
 
 /************************************************\
 ==================================================
