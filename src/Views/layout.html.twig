@@ -6,31 +6,64 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- BOOTSTRAP LIBRARY-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+
+    <!--Fonts-->
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <title>BrickTheArt</title>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="container">
+
     <div class="in-header">
 
-<img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
+        <img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
 
-<div>
-                <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?page=concept">Concept</a></li>
-                <li><a href="index.php?page=bricktour">BrickTour</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-                </ul>
 
-</div>
-    </div>
-</header
+        <!-- NAVBAR -->
+
+        <nav class="navbar navbar-inverse navbar_custom">
+            <div class="container">
+
+                <div class="navbar-header navbar_custom">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <a class="navbar-brand" href="index.php">BrickTheArt</a>
+
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar_custom">
+                        <li class="layout_nav_item"><a href="index.php">Home</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=concept">Concept</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=bricktour">BrickTour</a></li>
+                        <li class="layout_nav_item"><a href="index.php?page=contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+</header>
+<!-- END HEADER -->
+
+<div class="container">
     {% block body %}
 
     {% endblock %}
+</div>
 
 </body>
 </html>
