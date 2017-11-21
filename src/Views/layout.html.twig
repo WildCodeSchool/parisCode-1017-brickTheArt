@@ -1,27 +1,35 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!doctype html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- BOOTSTRAP LIBRARY-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- BOOTSTRAP LIBRARY-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../public/assets/css/style.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../public/assets/css/style.css" />
 
-    <!--Fonts-->
+        <!--CSS Social Icons -->
 
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-    <title>BrickTheArt</title>
-</head>
+        <!--Fonts-->
 
-<body>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-<!-- HEADER -->
+
+        <title>BrickTheArt</title>
+
+
+    </head>
+
+        <body>
+
+
+            <!-- HEADER -->
 <header class="container">
 
     <div class="in-header">
@@ -59,11 +67,64 @@
 </header>
 <!-- END HEADER -->
 
-<div class="container">
-    {% block body %}
 
-    {% endblock %}
-</div>
 
-</body>
-</html>
+            <div class="container">
+
+                {% block body %}
+
+                {% endblock %}
+
+            </div>
+
+
+
+            <!--Footer-->
+                <div class="container">
+                        <footer id="Footer">
+                                    <div class="row">
+
+                                        {#first column#}
+                                        <div class="col-sm-4 Col">
+                                                <div class="list-brick-the-art">
+                                            <h5>Brick The Art</h5>
+                                                <ul>
+                                                    <li><a href="index.php">Home</a></li>
+                                                    <li><a href="index.php?page=concept">Le concept</a></li>
+                                                    <li><a href="index.php?page=bricktour">Brick Tour</a></li>
+                                                </ul>
+                                                </div>
+                                        </div>
+
+                                        {#second column#}
+                                        <div class="col-sm-4 Col">
+                                            <div class="social-networks">
+                                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                                <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+
+                                        {#third column#}
+                                        <div class="col-sm-4 Col">
+                                            <h5>Contact</h5>
+                                                <ul>
+                                                    <li>+33 (0)1 44 00 00 00</li>
+                                                    <li>11 rue de Poissy 75005 Paris</li>
+                                                    <li><a href="index.php?page=contact">Nous contacter</a></li>
+                                                </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="footer-copyright">
+                                        <p> © 2017 Copyright Lego </p>
+                                        <p> Made by CAC </p>
+                                    </div>
+                        </footer>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                </div>
+        </body>
+    </html>
