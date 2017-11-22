@@ -57,4 +57,14 @@ class DefaultController extends ManagerController
 
     }*/
 
+
+    /**
+     * @return string
+     */
+    public function loginAction(){
+
+        return $this->twig->render('admin/login_admin.html.twig');
+        //permet de me trouver sur la page de login côté admin
+    }
+
 }

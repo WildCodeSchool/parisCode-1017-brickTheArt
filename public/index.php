@@ -12,11 +12,11 @@ if (empty($_GET)){
 }
 if (isset ($_GET['page'])) {
 
-    if ($_GET['page'] == 'concept') {
+        if ($_GET['page'] == 'concept') {
         $defaultController = new DefaultController();
         echo $defaultController->conceptAction();
 
-    }
+        }
         if ($_GET['page'] == 'bricktour') {
             $defaultController = new DefaultController();
             echo $defaultController->bricktourAction();
@@ -27,10 +27,15 @@ if (isset ($_GET['page'])) {
         $defaultController = new DefaultController();
         echo $defaultController->contactAction();
 
-    }
+        }
 
         if ($_GET['page'] == 'success') {
         $defaultController = new DefaultController();
         echo $defaultController->successAction();
         }
-    }
+
+        if ($_GET['page'] == 'login') {
+        $defaultController = new DefaultController();
+        echo $defaultController->loginAction();
+        }
+}
