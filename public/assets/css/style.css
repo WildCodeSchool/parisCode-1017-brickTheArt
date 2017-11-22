@@ -1,6 +1,6 @@
 /************************************************\
 ==================================================
-1. Font
+1. Body
 2. Navbar
 3. Home
 4. Concept
@@ -13,10 +13,24 @@
 
 /************************************************\
 ==================================================
-1. Font
+1. Body
 ==================================================
 \************************************************/
 
+html{
+    /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
+
+    height: 100%;
+}
+
+body {
+    /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
 
 /************************************************\
 ==================================================
@@ -153,19 +167,6 @@
 }
 
 /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
-
-
-html{
-    height: 100%;
-}
-
-body{
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    height: 100%;
-}
 
 .content{
     flex: 1 0 auto;
