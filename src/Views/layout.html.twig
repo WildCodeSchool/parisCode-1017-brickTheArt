@@ -17,7 +17,7 @@
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
                 <!-- CSS -->
-                <link rel="stylesheet" href="../../public/assets/css/style.css" />
+                <link rel="stylesheet" href="../public/assets/css/style.css" />
 
 
                 <!--CSS Social Media Icons -->
@@ -42,7 +42,7 @@
 
                 <div class="in-header">
 
-                <img src="../../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
+                <img src="../public/assets/pictures/banner.png" alt="banner" class="img-responsive center-block"/>
 
 
                 <!-- NAVBAR -->
@@ -64,10 +64,10 @@
 
                                 <div id="navbar" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav navbar_custom">
-                                        <li class="layout_nav_item"><a href="../../public/index.php">Home</a></li>
-                                        <li class="layout_nav_item"><a href="../../public/index.php?page=concept">Concept</a></li>
-                                        <li class="layout_nav_item"><a href="../../public/index.php?page=bricktour">BrickTour</a></li>
-                                        <li class="layout_nav_item"><a href="../../public/index.php?page=contact">Contact</a></li>
+                                        <li class="layout_nav_item"><a href="index.php">Home</a></li>
+                                        <li class="layout_nav_item"><a href="index.php?page=concept">Concept</a></li>
+                                        <li class="layout_nav_item"><a href="index.php?page=bricktour">BrickTour</a></li>
+                                        <li class="layout_nav_item"><a href="index.php?page=contact">Contact</a></li>
                                     </ul>
                                 </div>
                         </div>
@@ -76,7 +76,7 @@
                 <!--END OF NAVBAR-->
 
             </header>
-            <!-- END HEADER -->
+            <!-- END OF HEADER -->
 
 
             <div class="container">
@@ -90,50 +90,55 @@
 
             <div class="content">
 
-                {% block content %}
 
-                {% endblock %}
 
             </div>
 
             <!-- FOOTER -->
 
             <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4 Col">
-                            <div class="list-brick-the-art">
-                            <h5>Brick The Art</h5>
-                            <ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="index.php?page=concept">Le concept</a></li>
-                                <li><a href="index.php?page=bricktour">Brick Tour</a></li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 Col">
-                            <div class="social-networks">
-                                <a href="https://twitter.com/nathansawaya" class="twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/thebrickartist" class="facebook"><i class="fa fa-facebook-official"></i></a>
-                                <a href="https://www.instagram.com/lego/?hl=fr" class="instagram"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
 
-                        <div class="col-sm-4 Col">
-                            <h5>Contact</h5>
-                            <ul>
-                                <li>+33 (0)1 44 00 00 00</li>
-                                <li>11 rue de Poissy 75005 Paris</li>
-                                <li><a href="index.php?page=contact">Nous contacter</a></li>
-                            </ul>
-                        </div>
+                <div class="container container_footer">
+
+                    <div class="row row_footer">
+
+                            <div class="col-sm-4 col_footer">
+                                <div class="list-brick-the-art">
+                                    <h5>Brick The Art</h5>
+                                    <ul>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a href="index.php?page=concept">Le concept</a></li>
+                                        <li><a href="index.php?page=bricktour">Brick Tour</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 col_footer">
+                                <div class="social-networks">
+                                    <a href="https://twitter.com/nathansawaya" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/thebrickartist" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                                    <a href="https://www.instagram.com/lego/?hl=fr" class="instagram"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 col_footer">
+                                <h5>Contact</h5>
+                                <ul>
+                                    <li>+33 (0)1 44 00 00 00</li>
+                                    <li>11 rue de Poissy 75005 Paris</li>
+                                    <a href="index.php?page=contact"><li>Nous contacter</li></a>
+                                </ul>
+                            </div>
+
                     </div>
+
                 </div>
+
                 <div class="footer-copyright">
 
 
                     <!--Modal box that displays legal notices-->
-                    <a href="#mentionslegales">Mentions légales</a>
+                    <a href="#mentionslegales"><p>Mentions légales</p></a>
 
                     <div class="modal" id="mentionslegales">
                         <div class="modal-container">
@@ -145,7 +150,7 @@
 
                     <p> © 2017 Copyright Lego </p>
                     <p> Made by CAC </p>
-                    <a href="index.php?page=login"> Espace administrateur </a>
+                    <a href="index.php?page=login">Espace administrateur</a>
                 </div>
             </footer>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

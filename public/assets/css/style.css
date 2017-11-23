@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     -webkit-flex-direction: column;
     height: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', Lucida sans unicode, sans-serif;
 }
 
 .css {
@@ -72,12 +72,12 @@ body {
     }
     .navbar-inverse .navbar-nav > li > a {
         font-size: 15px;
-        color: black;
+        color: #000;
     }
 }
 
 .navbar-toggle {
-    background-color: black;
+    background-color: #000;
 }
 
 /* border-color: white pour éviter un effet de décalage au survol des liens */
@@ -170,7 +170,7 @@ iframe
 
 footer {
     background-color: #f7c001;
-    color:black;
+    color: #000;
 }
 
 footer .footer-copyright{
@@ -182,7 +182,7 @@ footer .footer-copyright{
 
 footer .footer-copyright p{
     margin:10px;
-    color: black;
+    color: #000;
 }
 
 footer ul{
@@ -194,13 +194,13 @@ footer ul{
 
 footer h5{
     font-size: 18px;
-    color: black;
+    color: #000;
     font-weight: bold;
     margin-top: 20px;
 }
 
 footer a{
-    color:black;
+    color: #000;
     text-decoration: none;
 }
 
@@ -218,7 +218,7 @@ footer a:hover{
     line-height: 1;
 }
 
-footer .col{
+footer .col_footer{
     text-align: center;
 }
 
