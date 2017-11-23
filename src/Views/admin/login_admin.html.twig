@@ -1,13 +1,12 @@
 {% import 'admin/form_login.html.twig' as form %}
 
-
 {% block body %}
 
     <h2 class="section_title">IDENTIFICATION ESPACE ADMINISTRATEUR</h2>
 
     <p>Veuillez renseigner les champs ci-dessous afin de pouvoir vous connecter à votre espace administrateur:</p>
 
-    <form action="?id=admin" method="post">
+    <form action="?page=admin" method="POST">
         {{ form.input('identifiant', 'Votre identifiant:', 'text') }}
         {{ form.input('password', 'Votre mot de passe: ', 'password') }}
 

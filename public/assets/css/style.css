@@ -32,6 +32,7 @@ body {
     -webkit-flex-direction: column;
     height: 100%;
     font-family: 'Lato', sans-serif;
+
 }
 
 .css {
@@ -270,3 +271,7 @@ iframe
 }
 
 
+.page-footer-brick{
+    width: 10%;
+    margin-left:10px;
+}

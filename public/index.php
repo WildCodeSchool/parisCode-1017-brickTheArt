@@ -15,18 +15,16 @@ if (isset ($_GET['page'])) {
         if ($_GET['page'] == 'concept') {
         $defaultController = new DefaultController();
         echo $defaultController->conceptAction();
-
         }
+
         if ($_GET['page'] == 'bricktour') {
             $defaultController = new DefaultController();
             echo $defaultController->bricktourAction();
-
         }
 
         if ($_GET['page'] == 'contact') {
         $defaultController = new DefaultController();
         echo $defaultController->contactAction();
-
         }
 
         if ($_GET['page'] == 'success') {
@@ -37,5 +35,20 @@ if (isset ($_GET['page'])) {
         if ($_GET['page'] == 'login') {
         $defaultController = new DefaultController();
         echo $defaultController->loginAction();
+        }
+
+        if ($_GET['page'] == 'admin') {
+        $defaultController = new DefaultController();
+        echo $defaultController->successadminAction();
+        }
+
+        if ($_GET['page'] == 'admin2') {
+            $defaultController = new DefaultController();
+            echo $defaultController->adminAction();
+        }
+
+        if ($_GET['page'] == 'logout') {
+            $defaultController = new DefaultController();
+            echo $defaultController->logoutAction();
         }
 }
