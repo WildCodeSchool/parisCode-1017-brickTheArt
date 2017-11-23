@@ -83,7 +83,7 @@ body {
 /* border-color: white pour éviter un effet de décalage au survol des liens */
 .navbar {
     background-color: #f7c001;
-    border-color: white;
+    border-color: #fff;
 }
 
 .navbar-custom {
@@ -168,92 +168,92 @@ iframe
 ==================================================
 \************************************************/
 
-#brickfooter {
+footer {
     background-color: #f7c001;
     color:black;
 }
 
-#brickfooter .footer-copyright{
+footer .footer-copyright{
     background-color: #f7c001;
     padding-top:10px;
     padding-bottom:10px;
     text-align: center;
 }
 
-#brickfooter .footer-copyright p{
+footer .footer-copyright p{
     margin:10px;
     color: black;
 }
 
-#brickfooter ul{
+footer ul{
     list-style-type: none;
     padding-left: 0;
     line-height: 1.7;
 
 }
 
-#brickfooter h5{
+footer h5{
     font-size: 18px;
     color: black;
     font-weight: bold;
     margin-top: 20px;
 }
 
-#brickfooter a{
+footer a{
     color:black;
     text-decoration: none;
 }
 
-#brickfooter a:hover{
+footer a:hover{
     text-decoration: none;
-    color:white;
+    color: #fff;
 }
 
 .footer-copyright a:hover {
     text-decoration: none;
-    color:white;
+    color: #fff;
 }
 
 .footer-copyright p {
     line-height: 1;
 }
 
-#brickfooter .Col{
+footer .col{
     text-align: center;
 }
 
-#brickfooter .social-networks{
+footer .social-networks{
     text-align: center;
     padding-top: 30px;
 }
 
-#brickfooter .social-networks a{
+footer .social-networks a{
     font-size: 32px;
     margin-right: 5px;
     margin-left: 5px;
-    color: black;
+    color: #000;
     padding: 10px;
     transition: 0.2s;
 }
 
-#brickfooter .social-networks a:hover{
+footer .social-networks a:hover{
     text-decoration: none;
 }
 
-#brickfooter .facebook:hover{
-    color:white;
+footer .facebook:hover{
+    color: #fff;
 }
 
-#brickfooter .instagram:hover{
-    color:white;
+footer .instagram:hover{
+    color: #fff;
 }
 
-#brickfooter .twitter:hover{
-    color: white;
+footer .twitter:hover{
+    color: #fff;
 }
 
 @media screen and (max-width: 767px){
-    #brickfooter {
+    footer {
         text-align: center;
     }
     .list-brick-the-art{
