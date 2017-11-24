@@ -38,6 +38,10 @@ body {
     width: 100%;
 }
 
+.section_title {
+    margin-bottom: 30px;
+}
+
 /************************************************\
 ==================================================
 2. Navbar
@@ -177,6 +181,11 @@ iframe
     border: none;
     border-radius: 10px;
     color: #000;
+}
+
+.btn-info:hover {
+    background-color: #f7c001;
+    color: #fff;
 }
 
 
