@@ -186,6 +186,12 @@ iframe
 ==================================================
 \************************************************/
 
+.container_footer {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 footer {
     background-color: #f7c001;
     color: #000;
@@ -291,4 +297,3 @@ footer .twitter:hover{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
 }
-
