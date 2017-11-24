@@ -1,6 +1,6 @@
 
 h2{
-    font-size:18px;
+    font-size:20px;
     color:#256c89;
     font-weight:normal;
     padding:0px 0 15px 0;
@@ -32,3 +32,7 @@ h2{
     color: #669;
 }
 
+.form-group {
+
+    padding-bottom: 50px;
+}
