@@ -38,6 +38,10 @@ body {
     width: 100%;
 }
 
+.section_title {
+    margin-bottom: 30px;
+}
+
 /************************************************\
 ==================================================
 2. Navbar
@@ -161,6 +165,29 @@ iframe
 ==================================================
 \************************************************/
 
+.container_contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact_input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-info {
+    background-color: #f7c001;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+}
+
+.btn-info:hover {
+    background-color: #f7c001;
+    color: #fff;
+}
+
 
 /************************************************\
 ==================================================
@@ -180,7 +207,6 @@ footer {
 }
 
 footer .footer-copyright{
-    background-color: #f7c001;
     padding-top:10px;
     padding-bottom:10px;
     text-align: center;
@@ -279,5 +305,4 @@ footer .twitter:hover{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
 }
-
 
