@@ -34,9 +34,6 @@ body {
     font-family: 'Lato', Lucida sans unicode, sans-serif;
 }
 
-.css {
-    width: 100%;
-}
 
 /************************************************\
 ==================================================
@@ -137,13 +134,34 @@ body {
 ==================================================
 \************************************************/
 
+.home_introduction {
+    padding-bottom: 20px;
+}
+
+.home_img {
+    width: 100%;
+}
+
+.row_home {
+    padding-bottom: 15px;
+}
 
 /************************************************\
 ==================================================
 4. Concept
 ==================================================
 \************************************************/
+.concept_img {
+    width: 100%;
+}
 
+.concept_about {
+    padding-bottom: 20px;
+}
+
+.row_concept {
+    padding-bottom: 10px;
+}
 
 /************************************************\
 ==================================================
@@ -273,62 +291,4 @@ footer .twitter:hover{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
 }
-
-
-/*modal box for legal notices*/
-
-.modal-text {
-    margin-top: 0;
-}
-
-.modal-container {
-    position: fixed;
-    background-color: #fff;
-    width: 70%;
-    max-width: 400px;
-    /*border: 1px solid #000;*/
-    left: 50%;
-    padding: 20px;
-    border-radius: 5px;
-
-
-    -webkit-transform: translate(-50%, -200%);
-    -ms-transform: translate(-50%, -200%);
-    -moz-transform: translate(-50%, -200%);
-    transform: translate(-50%, -200%);
-
-    -webkit-transition: -webkit-transform 200ms ease-out;
-    /*-ms-transition: -ms-transform 200ms ease-out;*/
-    -moz-transition: -moz-transform 200ms ease-out;
-    transition: transform 200ms ease-out;
-
-}
-
-.modal:before {
-    content: "";
-    position: fixed;
-    display: none;
-    background-color: rgba(0, 0, 0, .8);
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.modal:target:before {
-    display: block;
-
-}
-
-.modal:target .modal-container {
-    top: 20%;
-
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, -200%);
-    transform: translate(-50%, 0);
-
-}
-
-#modal-close {}
 
