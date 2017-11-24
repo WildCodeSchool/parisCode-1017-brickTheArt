@@ -161,6 +161,24 @@ iframe
 ==================================================
 \************************************************/
 
+.container_contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact_input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-info {
+    background-color: #f7c001;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+}
+
 
 /************************************************\
 ==================================================
@@ -174,7 +192,6 @@ footer {
 }
 
 footer .footer-copyright{
-    background-color: #f7c001;
     padding-top:10px;
     padding-bottom:10px;
     text-align: center;
@@ -304,31 +321,5 @@ footer .twitter:hover{
 
 }
 
-.modal:before {
-    content: "";
-    position: fixed;
-    display: none;
-    background-color: rgba(0, 0, 0, .8);
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
 
-.modal:target:before {
-    display: block;
-
-}
-
-.modal:target .modal-container {
-    top: 20%;
-
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, -200%);
-    transform: translate(-50%, 0);
-
-}
-
-#modal-close {}
 
