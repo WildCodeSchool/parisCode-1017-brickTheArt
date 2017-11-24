@@ -34,9 +34,6 @@ body {
     font-family: 'Lato', Lucida sans unicode, sans-serif;
 }
 
-.css {
-    width: 100%;
-}
 
 .section_title {
     margin-bottom: 30px;
@@ -141,13 +138,34 @@ body {
 ==================================================
 \************************************************/
 
+.home_introduction {
+    padding-bottom: 20px;
+}
+
+.home_img {
+    width: 100%;
+}
+
+.row_home {
+    padding-bottom: 15px;
+}
 
 /************************************************\
 ==================================================
 4. Concept
 ==================================================
 \************************************************/
+.concept_img {
+    width: 100%;
+}
 
+.concept_about {
+    padding-bottom: 20px;
+}
+
+.row_concept {
+    padding-bottom: 10px;
+}
 
 /************************************************\
 ==================================================
@@ -305,4 +323,3 @@ footer .twitter:hover{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
 }
-
