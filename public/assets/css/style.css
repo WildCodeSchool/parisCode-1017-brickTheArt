@@ -31,6 +31,7 @@ body {
     flex-direction: column;
     -webkit-flex-direction: column;
     height: 100%;
+
     font-family: 'Lato', Lucida sans unicode, sans-serif;
 }
 
@@ -322,4 +323,10 @@ footer .twitter:hover{
 #myFooter{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
+}
+
+
+.page-footer-brick{
+    width: 10%;
+    margin-left:10px;
 }
