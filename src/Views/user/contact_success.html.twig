@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    <h2 class="section_title">Votre demande a bien été envoyée ! </h2>
+    <p>Nous vous répondrons dans les meilleurs délais.</p>
+    <p>En attendant vous pouvez...</p>
+
+    <!--on dispose trois boutons alignés pour donner le choix au visiteur-->
+
+    <a href="?page=concept#concept_news">
+        <div class="btn_success btn_blue">Découvrir nos dernières constructions</div>
+    </a>
+
+    <a href="?page=bricktour">
+        <div class="btn_success btn_red">Suivre le parcours du Lego Truck</div>
+    </a>
+
+    <a href="?page=home">
+        <div class="btn_success btn_yellow">Retourner à la page d'accueil</div>
+    </a>
+
+{% endblock %}

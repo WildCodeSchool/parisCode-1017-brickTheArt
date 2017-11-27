@@ -1,0 +1,332 @@
+/************************************************\
+==================================================
+1. Body
+2. Navbar
+3. Home
+4. Concept
+5. MAP
+6. Form
+7. Footer
+==================================================
+\************************************************/
+
+
+/************************************************\
+==================================================
+1. Body
+==================================================
+\************************************************/
+
+
+html{
+    /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
+
+    height: 100%;
+}
+
+body {
+    /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+
+    font-family: 'Lato', Lucida sans unicode, sans-serif;
+}
+
+
+.section_title {
+    margin-bottom: 30px;
+}
+
+/************************************************\
+==================================================
+2. Navbar
+==================================================
+\************************************************/
+
+.container_header {
+    width:100%;
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+    /* Le nom du site n'apparait pas */
+    .navbar-brand {
+        display: none;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000;
+        font-family: 'Lato';
+        font-size: 22px;
+    }
+}
+
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    /* la font-size de la navbar est diminuée */
+    .navbar-inverse .navbar-brand {
+        font-size: 10px;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 15px;
+        color: #000;
+    }
+}
+
+.navbar-toggle {
+    background-color: #000;
+}
+
+/* border-color: white pour éviter un effet de décalage au survol des liens */
+.navbar {
+    background-color: #f7c001;
+    border-color: #fff;
+}
+
+.navbar-custom {
+    background-color: #f7c001 !important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #000;
+    font-family: 'Lato';
+    font-size: 24px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #000;
+}
+
+.navbar-brand:hover {
+    color: #000 !important;
+}
+
+.layout_nav_item:hover {
+    border-bottom: 5px solid #000;
+}
+
+.layout_nav_item {
+    border-bottom: 5px solid #f7c001;
+}
+
+/* centrage de la navbar*/
+.center.navbar .nav {
+    float:none;
+    display:inline-block;
+    vertical-align: top;
+}
+.center  {
+    text-align:center;
+}
+
+.nav > li > a {
+    padding-left: 15px;
+}
+
+
+
+
+
+
+/************************************************\
+==================================================
+3. Home
+==================================================
+\************************************************/
+
+.home_introduction {
+    padding-bottom: 20px;
+}
+
+.home_img {
+    width: 100%;
+}
+
+.row_home {
+    padding-bottom: 15px;
+}
+
+/************************************************\
+==================================================
+4. Concept
+==================================================
+\************************************************/
+.concept_img {
+    width: 100%;
+}
+
+.concept_about {
+    padding-bottom: 20px;
+}
+
+.row_concept {
+    padding-bottom: 10px;
+}
+
+/************************************************\
+==================================================
+5. MAP
+==================================================
+\************************************************/
+
+iframe
+{
+    width:100%;
+}
+/************************************************\
+==================================================
+5. Form
+==================================================
+\************************************************/
+
+.container_contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact_input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-info {
+    background-color: #f7c001;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+}
+
+.btn-info:hover {
+    background-color: #f7c001;
+    color: #fff;
+}
+
+
+/************************************************\
+==================================================
+7. Footer
+==================================================
+\************************************************/
+
+.container_footer {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #f7c001;
+    color: #000;
+}
+
+footer .footer-copyright{
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+footer .footer-copyright p{
+    margin:10px;
+    color: #000;
+}
+
+footer ul{
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+footer h5{
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+footer a{
+    color: #000;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-copyright a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-copyright p {
+    line-height: 1;
+}
+
+footer .col_footer{
+    text-align: center;
+}
+
+footer .social-networks{
+    text-align: center;
+    padding-top: 30px;
+}
+
+footer .social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #000;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+footer .social-networks a:hover{
+    text-decoration: none;
+}
+
+footer .facebook:hover{
+    color: #fff;
+}
+
+footer .instagram:hover{
+    color: #fff;
+}
+
+footer .twitter:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 767px){
+    footer {
+        text-align: center;
+    }
+    .list-brick-the-art{
+        display: none;
+    }
+}
+
+/* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
+
+.content{
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    min-height: 50px;
+}
+
+#myFooter{
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+}
+
+
+.page-footer-brick{
+    width: 10%;
+    margin-left:10px;
+}
