@@ -3,6 +3,7 @@
 namespace BrickTheArt\Controllers\Website;
 
 use BrickTheArt\Controllers\DefaultController;
+use BrickTheArt\Model\Repository\ContactManager;
 
 /**
  * Class DefaultManagerController
@@ -15,8 +16,12 @@ class HomeController extends DefaultController
      */
     public function displayAction()
     {
+        $contactManager = new ContactManager();
+        $coordonnees = $contactManager->getCoordonnees();
+        return $this->twig->render('user/home.html.twig', array(
+            "coordonnees" => $coordonnees
+        ));
 
-        return $this->twig->render('user/home.html.twig');
     }
 
 }
