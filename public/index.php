@@ -4,51 +4,56 @@
 require_once '../vendor/autoload.php';
 require_once '../app/config.php';
 
-use BrickTheArt\Controllers\DefaultController;
+use BrickTheArt\Controllers\Website\HomeController;
+use BrickTheArt\Controllers\Website\ConceptController;
+use BrickTheArt\Controllers\Website\BricktourController;
+use BrickTheArt\Controllers\Website\ContactController;
+use BrickTheArt\Controllers\Admin\SessionController;
+
 
 if (empty($_GET)){
-	$defaultController = new DefaultController();
-	echo $defaultController->indexAction();
+	$defaultController = new HomeController();
+	echo $defaultController->displayAction();
 }
 if (isset ($_GET['page'])) {
 
         if ($_GET['page'] == 'concept') {
-        $defaultController = new DefaultController();
-        echo $defaultController->conceptAction();
+        $defaultController = new ConceptController();
+        echo $defaultController->displayAction();
         }
 
         if ($_GET['page'] == 'bricktour') {
-            $defaultController = new DefaultController();
-            echo $defaultController->bricktourAction();
+            $defaultController = new BricktourController();
+            echo $defaultController->displayAction();
         }
 
         if ($_GET['page'] == 'contact') {
-        $defaultController = new DefaultController();
-        echo $defaultController->contactAction();
+        $defaultController = new ContactController();
+        echo $defaultController->displayAction();
         }
 
         if ($_GET['page'] == 'success') {
-        $defaultController = new DefaultController();
+        $defaultController = new ContactController();
         echo $defaultController->successAction();
         }
 
         if ($_GET['page'] == 'login') {
-        $defaultController = new DefaultController();
+        $defaultController = new SessionController();
         echo $defaultController->loginAction();
         }
 
         if ($_GET['page'] == 'admin') {
-        $defaultController = new DefaultController();
-        echo $defaultController->successadminAction();
-        }
-
-        if ($_GET['page'] == 'admin2') {
-            $defaultController = new DefaultController();
-            echo $defaultController->adminAction();
+        $defaultController = new SessionController();
+        echo $defaultController->loginsuccessAction();
         }
 
         if ($_GET['page'] == 'logout') {
-            $defaultController = new DefaultController();
+            $defaultController = new SessionController();
             echo $defaultController->logoutAction();
+        }
+
+        if ($_GET['page'] == 'admin2') {
+            $defaultController = new SessionController();
+            echo $defaultController->adminAction();
         }
 }

@@ -24,29 +24,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `projet2` /*!40100 DEFAULT CHARACTER SE
 USE `projet2`;
 
 --
--- Table structure for table `concept_information`
---
-
-DROP TABLE IF EXISTS `concept_information`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `concept_information` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `concept_information`
---
-
-LOCK TABLES `concept_information` WRITE;
-/*!40000 ALTER TABLE `concept_information` DISABLE KEYS */;
-/*!40000 ALTER TABLE `concept_information` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `contact_information`
 --
 
@@ -72,26 +49,27 @@ LOCK TABLES `contact_information` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `home_information`
+-- Table structure for table `informations`
 --
 
-DROP TABLE IF EXISTS `home_information`;
+DROP TABLE IF EXISTS `informations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `home_information` (
+CREATE TABLE `informations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text,
+  `home` text,
+  `concept` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `home_information`
+-- Dumping data for table `informations`
 --
 
-LOCK TABLES `home_information` WRITE;
-/*!40000 ALTER TABLE `home_information` DISABLE KEYS */;
-/*!40000 ALTER TABLE `home_information` ENABLE KEYS */;
+LOCK TABLES `informations` WRITE;
+/*!40000 ALTER TABLE `informations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `informations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -144,6 +122,30 @@ LOCK TABLES `masterpiece` WRITE;
 /*!40000 ALTER TABLE `masterpiece` DISABLE KEYS */;
 /*!40000 ALTER TABLE `masterpiece` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(10) DEFAULT NULL,
+  `password` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -154,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-24 15:08:42
+-- Dump completed on 2017-11-28 10:43:41
