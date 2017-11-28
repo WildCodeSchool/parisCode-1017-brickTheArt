@@ -12,48 +12,48 @@ use BrickTheArt\Controllers\Admin\SessionController;
 
 
 if (empty($_GET)){
-	$defaultController = new HomeController();
-	echo $defaultController->displayAction();
+	$homeController = new HomeController();
+	echo $homeController->displayAction();
 }
 if (isset ($_GET['page'])) {
 
         if ($_GET['page'] == 'concept') {
-        $defaultController = new ConceptController();
-        echo $defaultController->displayAction();
+        $conceptController = new ConceptController();
+        echo $conceptController->displayAction();
         }
 
         if ($_GET['page'] == 'bricktour') {
-            $defaultController = new BricktourController();
-            echo $defaultController->displayAction();
+            $bricktourController = new BricktourController();
+            echo $bricktourController->displayAction();
         }
 
         if ($_GET['page'] == 'contact') {
-        $defaultController = new ContactController();
-        echo $defaultController->displayAction();
+        $contactController = new ContactController();
+        echo $contactController->displayAction();
         }
 
         if ($_GET['page'] == 'success') {
-        $defaultController = new ContactController();
-        echo $defaultController->successAction();
+        $contactController = new ContactController();
+        echo $contactController->successAction();
         }
 
         if ($_GET['page'] == 'login') {
-        $defaultController = new SessionController();
-        echo $defaultController->loginAction();
+        $sessionController = new SessionController();
+        echo $sessionController->loginAction();
         }
 
         if ($_GET['page'] == 'admin') {
-        $defaultController = new SessionController();
-        echo $defaultController->loginsuccessAction();
+        $sessionController = new SessionController();
+        echo $sessionController->loginsuccessAction();
         }
 
         if ($_GET['page'] == 'logout') {
-            $defaultController = new SessionController();
-            echo $defaultController->logoutAction();
+            $sessionController = new SessionController();
+            echo $sessionController->logoutAction();
         }
 
         if ($_GET['page'] == 'admin2') {
-            $defaultController = new SessionController();
-            echo $defaultController->adminAction();
+            $sessionController = new SessionController();
+            echo $sessionController->adminAction();
         }
 }
