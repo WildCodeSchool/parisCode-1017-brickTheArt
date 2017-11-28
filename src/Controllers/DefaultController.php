@@ -2,95 +2,32 @@
 
 namespace BrickTheArt\Controllers;
 
-use BrickTheArt\Model\Repository\UserManager;
+use BrickTheArt\Model\Repository\ContactManager;
+use Twig_Loader_Filesystem;
+use Twig_Environment;
+use Twig_Extension_Debug;
 
 /**
- * Class DefaultManagerController
- * @package MyApp\ManagerController
+ * Class DefaultController
  */
-class DefaultController extends ManagerController
+class DefaultController
 {
 	/**
-	 * Render home
+	 * @var Twig_Environment
 	 */
-	public function indexAction(){
-
-		return $this->twig->render('user/home.html.twig');
-	}
+	protected $twig;
 
 	/**
-	 * @return string
+	 * Twig DefaultController constructor.
 	 */
-	public function conceptAction(){
-
-			return $this->twig->render('user/concept.html.twig');
-
+	public function __construct()
+	{
+		$loader = new Twig_Loader_Filesystem('../src/Views/');
+		$this->twig = new Twig_Environment($loader, array(
+			'cache' => false,
+			'debug' => true
+		));
+		$this->twig->addExtension(new Twig_Extension_Debug());
 	}
 
-    /**
-     * @return string
-     */
-    public function bricktourAction(){
-
-        return $this->twig->render('user/bricktour.html.twig');
-
-    }
-
-    /**
-     * @return string
-     */
-    public function contactAction(){
-
-        return $this->twig->render('user/contact.html.twig');
-
-        //gestion des erreurs, avec au départ $errors = 0. (header:"Location:index.php?page=success", etc)
-
-    }
-
-    /**
-     * @return string
-     */
-
-    /*public function successAction(){
-
-        return $this->twig->render('user/contact_success.html.twig')
-
-    }*/
-
-
-    /**
-     * @return string
-     */
-    public function loginAction(){
-
-        return $this->twig->render('admin/login_admin.html.twig');
-        //permet de me trouver sur la page de login côté admin
-    }
-
-    /**
-     * @return string
-     */
-    public function successadminAction(){
-
-        return $this->twig->render('admin/back_office_page1.html.twig');
-        //permet de me trouver sur la première page du BO
-    }
-
-    /**
-     * @return string
-     */
-    public function adminAction(){
-
-        return $this->twig->render('admin/back_office_page2.html.twig');
-        //permet de me trouver sur la seconde page du BO
-    }
-
-    /**
-     * @return string
-     */
-    public function logoutAction(){
-
-        return $this->twig->render('admin/successlogout.html.twig');
-        //permet de me trouver sur une page de succès
-    }
 }

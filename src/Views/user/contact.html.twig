@@ -5,6 +5,22 @@
 {% block body %}
     <div class="container container_contact">
         <div class="row row_contact">
+            <div class="col-md-offset-3 col-md-6 col_duration_hours">
+                <h2 class="section_title">Adresse et horaires</h2>
+
+                <p><span>Téléphone :</span></br>
+                    {{ coordonnees.phone }}</p>
+                <p><span>Adresse :</span></br>
+                    {{ coordonnees.adress}}</p>
+                <p><span>Horaires :</span></br>
+                    {{ coordonnees.opening }}</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container container_contact">
+        <div class="row row_contact">
             <div class="col-md-offset-3 col-md-6 col_contact">
                 <h2 class="section_title">Nous contacter</h2>
 
