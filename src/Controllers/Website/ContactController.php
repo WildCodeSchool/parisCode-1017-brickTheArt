@@ -32,6 +32,19 @@ class ContactController extends DefaultController
 
     /*public function successAction(){
 
+        On répertorie les erreurs dans un tableau $error
+
+        Si on se trouve en méthode POST
+            * Si $erreur de firstname, lastname, email, city ou message > 0 -> render la vue page de contact avec les champs pré-remplis
+            * Sinon -> render la vue page de succès ;
+                    -> envoi des infos par email;
+        Sinon, on demeure par défaut dans la page de contact
+
+
+
+
+        }
+
         return $this->twig->render('user/contact_success.html.twig')
 
     }*/
