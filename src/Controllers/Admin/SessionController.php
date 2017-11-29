@@ -37,13 +37,5 @@ class SessionController extends DefaultController
         //permet de me trouver sur une page de succès
     }
 
-    /**
-     * @return string
-     */
-    public function adminAction(){
-
-        return $this->twig->render('admin/back_office_page2.html.twig');
-        //permet de me trouver sur la seconde page du BO
-    }
 
 }

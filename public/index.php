@@ -52,8 +52,4 @@ if (isset ($_GET['page'])) {
             echo $sessionController->logoutAction();
         }
 
-        if ($_GET['page'] == 'admin2') {
-            $sessionController = new SessionController();
-            echo $sessionController->adminAction();
-        }
 }
