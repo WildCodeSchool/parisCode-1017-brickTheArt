@@ -13,7 +13,7 @@ use BrickTheArt\Controllers\Admin\SessionController;
 
 if (empty($_GET)){
 	$homeController = new HomeController();
-	echo $homeController->displayAction();
+    echo $homeController->displayAction();
 }
 if (isset ($_GET['page'])) {
 
