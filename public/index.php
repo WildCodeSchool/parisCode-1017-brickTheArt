@@ -32,9 +32,9 @@ if (isset ($_GET['page'])) {
         echo $contactController->displayAction();
         }
 
-        if ($_GET['page'] == 'success') {
+        if ($_GET['page'] == 'traitement') {
         $contactController = new ContactController();
-        echo $contactController->successAction();
+        echo $contactController->traitementAction();
         }
 
         if ($_GET['page'] == 'login') {
