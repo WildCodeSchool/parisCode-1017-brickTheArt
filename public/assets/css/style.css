@@ -48,6 +48,8 @@ body {
 .section_title {
     margin-bottom: 30px;
     text-align: center;
+    font-size: 4em;
+    text-transform: uppercase;
     font-family: 'Legothick', Lucida sans unicode, sans-serif;
 }
 
