@@ -3,6 +3,9 @@
 namespace BrickTheArt\Controllers\Website;
 
 use BrickTheArt\Controllers\DefaultController;
+use BrickTheArt\Model\Repository\ContactManager;
+use BrickTheArt\Model\Repository\InformationManager;
+use BrickTheArt\Model\Repository\MasterpieceManager;
 
 /**
  * Class DefaultManagerController
@@ -15,7 +18,18 @@ class ConceptController extends DefaultController
      */
     public function displayAction()
     {
+        $contactManager = new ContactManager();
+        $informationManager = new InformationManager();
+        $masterpieceManager = new MasterpieceManager();
 
-        return $this->twig->render('user/concept.html.twig');
+        $coordonnees = $contactManager->getCoordonnees();
+        $information = $informationManager->getConceptInformations();
+        $masterpiece = $masterpieceManager->getMasterpiece();
+        return $this->twig->render('user/concept.html.twig', array(
+            "coordonnees" => $coordonnees,
+            "information" => $information,
+            "masterpiece" => $masterpiece
+        ));
+
     }
 }
