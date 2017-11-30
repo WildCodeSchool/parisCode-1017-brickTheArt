@@ -4,7 +4,6 @@ namespace BrickTheArt\Controllers\Website;
 
 use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
-
 /**
  * Class DefaultManagerController
  * @package MyApp\ManagerController
@@ -54,24 +53,25 @@ class ContactController extends DefaultController
                 $message = $_POST['message'];
 
 
-               // Create the Transport
-                $transport = (new \Swift_SmtpTransport('smtp.example.org', 25))
-                ->setUsername('your username')
-                ->setPassword('your password')
+                // Create the Transport
+                $transport = (new \Swift_SmtpTransport('smtp.mailtrap.io', 2525))
+                    ->setUsername('3cbb483438cb93')
+                    ->setPassword('9550b5a8c720b6')
+                    ->setAuthMode('cram-md5')
                 ;
 
                 // Create the Mailer using your created Transport
                 $mailer = new \Swift_Mailer($transport);
 
                 // Create a message
-                $message = (new \Swift_Message('Wonderful Subject'))
+                $message = (new \Swift_Message('Another brick in the wall'))
                 ->setFrom([$email => $firstname . $lastname])
                 ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
-                ->setBody($firstname. 'de'. $city. 'vous a envoyé un mot doux :'.$message )
+                ->setBody($firstname. 'de'. $city. 'vous a écrit :'.$message )
                 ;
 
                 // Send the message
-                $result = $mailer->send($message);
+                //$result = $mailer->send($message);
 
 
             }
