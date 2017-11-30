@@ -10,10 +10,7 @@
 
             <h2 class="section_title">The Concept behind BrickTheArt</h2>
 
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+            <p>{{ information.concept }}</p>
 
         </section>
 
@@ -23,74 +20,25 @@
 
             <h2 class="section_title">Articles</h2>
 
-            <div class="row row_concept">
-
-
+             {% for master in masterpiece %}
 
                 <div class="concept_article">
 
 
                     <div class="concept col-md-6 col-xs-12">
 
-                        <h3 class="article_title">Titre article 1</h3>
+                        <h3 class="article_title">{{ master.title }}</h3>
 
                         <figure>
-                            <img class="concept_img" src="http://www.arrl.org/images/view/News/this-is-only-a-test.jpg" alt="#"/>
+                            <img class="concept_img" src="{{ master.image }}" alt="#"/>
                         </figure>
 
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                </div>
-
-
-                <div class="concept_article">
-
-
-                    <div class="concept col-md-6 col-xs-12">
-
-                        <h3 class="article_title">Titre article 2</h3>
-
-                        <figure>
-                            <img class="concept_img" src="http://www.arrl.org/images/view/News/this-is-only-a-test.jpg" alt="#"/>
-                        </figure>
-
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-                <div class="row row_concept">
-
-                    <div class="concept_article">
-                        <div class="concept col-md-6 col-xs-12">
-
-                            <h3 class="article_title">Titre article 3</h3>
-
-                            <figure>
-                                <img class="concept_img" src="http://www.arrl.org/images/view/News/this-is-only-a-test.jpg" alt="#"/>
-                            </figure>
-
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                        </div>
-                    </div>
-
-                    <div class="concept_article">
-                        <div class="concept col-md-6 col-xs-12">
-
-                            <h3 class="article_title">Titre article 4</h3>
-
-                            <figure>
-                                <img class="concept_img" src="http://www.arrl.org/images/view/News/this-is-only-a-test.jpg" alt="#"/>
-                            </figure>
-
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                        <p>{{ master.content }}</p>
 
                         </div>
-                    </div>
                 </div>
+
+    {% endfor %}
         </section>
 
     </div>

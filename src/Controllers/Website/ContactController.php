@@ -63,6 +63,7 @@ class ContactController extends DefaultController
                 // Create the Mailer using your created Transport
                 $mailer = new \Swift_Mailer($transport);
 
+
                 // Create a message
                 $message = (new \Swift_Message('Another brick in the wall'))
                 ->setFrom([$email => $firstname . $lastname])

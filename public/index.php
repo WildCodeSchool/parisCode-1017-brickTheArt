@@ -13,7 +13,7 @@ use BrickTheArt\Controllers\Admin\SessionController;
 
 if (empty($_GET)){
 	$homeController = new HomeController();
-	echo $homeController->displayAction();
+    echo $homeController->displayAction();
 }
 if (isset ($_GET['page'])) {
 
@@ -37,12 +37,6 @@ if (isset ($_GET['page'])) {
         echo $contactController->contactAction();
         }
 
-        /*
-        if ($_GET['page'] == 'success') {
-        $contactController = new ContactController();
-        echo $contactController->successAction();
-        }
-        */
 
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
@@ -54,13 +48,19 @@ if (isset ($_GET['page'])) {
         echo $sessionController->loginsuccessAction();
         }
 
+        if ($_GET['page'] == 'edithome_admin') {
+        $sessionController = new SessionController();
+        echo $sessionController->edithomeAction();
+        }
+
+    if ($_GET['page'] == 'edit_contact') {
+        $sessionController = new SessionController();
+        echo $sessionController->editcontactAction();
+    }
+
         if ($_GET['page'] == 'logout') {
             $sessionController = new SessionController();
             echo $sessionController->logoutAction();
         }
 
-        if ($_GET['page'] == 'admin2') {
-            $sessionController = new SessionController();
-            echo $sessionController->adminAction();
-        }
 }
