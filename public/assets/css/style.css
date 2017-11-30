@@ -287,11 +287,6 @@ footer .social-networks a{
     transition: 0.2s;
 }
 
-.grow:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
 
 footer .social-networks a:hover{
     text-decoration: none;
