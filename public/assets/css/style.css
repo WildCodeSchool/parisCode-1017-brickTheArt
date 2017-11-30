@@ -35,10 +35,22 @@ body {
     font-family: 'Lato', Lucida sans unicode, sans-serif;
 }
 
+@font-face {
+    font-family: 'Legothick';
+    src: url('../css/fonts/Legothick/Legothick.eot');
+    src: url('../css/fonts/socicon/socicon.eot?#iefix') format('embedded-opentype'),
+    url('../css/fonts/Legothick/Legothick.woff') format('woff'),
+    url('../css/fonts/Legothick/Legothick.ttf') format('truetype'),
+    url('../css/fonts/Legothick/Legothick.svg#icomoonregular') format('svg');
+
+}
 
 .section_title {
     margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Legothick', Lucida sans unicode, sans-serif;
 }
+
 
 /************************************************\
 ==================================================
@@ -145,6 +157,7 @@ body {
 
 .home_img {
     width: 100%;
+    margin-bottom: 80px;
 }
 
 .row_home {
@@ -177,6 +190,7 @@ body {
 iframe
 {
     width:100%;
+    margin-bottom: 55px;
 }
 /************************************************\
 ==================================================
@@ -225,19 +239,6 @@ footer {
     color: #000;
 }
 
-/*
-footer .footer-copyright{
-    padding-top:10px;
-    padding-bottom:10px;
-    text-align: center;
-}
-
-footer .footer-copyright p{
-    margin:10px;
-    color: #000;
-}
-*/
-
 .menu{
     list-style-type: none;
     padding-left: 0;
@@ -264,18 +265,6 @@ footer h5{
 }
 
 
-/*
-.footer-copyright a:hover {
-
-    text-decoration: none;
-    color: #fff;
-}
-
-.footer-copyright p {
-    line-height: 1;
-}
-
-*/
 
 .col_footer{
     text-align: center;
@@ -286,51 +275,37 @@ footer h5{
     padding-top: 30px;
 }
 
-/*footer .social-networks a{
-    font-size: 32px;
-    margin-right: 5px;
-    margin-left: 5px;
-    color: #000;
-    padding: 10px;
-    transition: 0.2s;
-}
-
-
-footer .social-networks a:hover{
-    text-decoration: none;
-}
-*/
-
 
 .grow:hover {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
-    /*color: #fff;*/
 }
+
+
 
 @font-face {
     font-family: 'si';
-    src: url('../assets/pictures/socicon/socicon.eot');
-    src: url('../assets/pictures/socicon/socicon.eot?#iefix') format('embedded-opentype'),
-    url('../assets/pictures/socicon/socicon.woff') format('woff'),
-    url('../assets/pictures/socicon/socicon.ttf') format('truetype'),
-    url('../assets/pictures/socicon/socicon.svg#icomoonregular') format('svg');
+    src: url('../css/fonts/socicon/socicon.eot');
+    src: url('../css/fonts/socicon/socicon.eot?#iefix') format('embedded-opentype'),
+    url('../css/fonts/socicon/socicon.woff') format('woff'),
+    url('../css/fonts/socicon/socicon.ttf') format('truetype'),
+    url('../css/fonts/socicon/socicon.svg#icomoonregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family:si;
-        src: url('../assets/pictures/socicon/socicon.svg') format(svg);
+        src: url('../css/fonts/socicon/socicon.svg') format('svg');
     }
 }
 
 
 .soc {
-    /*overflow:hidden;*/
     margin:0;
     padding:0;
     list-style:none;
@@ -393,27 +368,3 @@ footer .social-networks a:hover{
         display: none;
     }
 }
-
-/* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
-
-/*
-.content{
-    flex: 1 0 auto;
-    -webkit-flex: 1 0 auto;
-    min-height: 50px;
-}
-
-
-
-#myFooter{
-    flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-}
-
-
-.page-footer-brick{
-    width: 10%;
-    margin-left:10px;
-}
-*/
-
