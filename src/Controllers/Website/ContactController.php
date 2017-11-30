@@ -29,11 +29,34 @@ class ContactController extends DefaultController
     /**
      * @return string
      */
+    public function contactAction(){
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $errors = [];
+            foreach ($_POST as $key => $value){
+                if (empty($_POST[$key])) {
+                    $errors[$key] = "Veuillez renseigner le champ " . $key;
+                }
+            }
+            if (!empty($errors)){
+                return $this->twig->render('contact.html.twig', array(
+                    'errors' => $errors
+                ));
+            }
 
-    /*public function successAction(){
+            /*
+            else{
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
+                $email = $_POST['email'];
+                $city = $_POST['city'];
+                $message = $_POST['message'];
+            */
 
-        return $this->twig->render('user/contact_success.html.twig')
 
-    }*/
+
+            }
+        }
+        return $this->twig->render('contact_success.html.twig');
+    }
 
 }
