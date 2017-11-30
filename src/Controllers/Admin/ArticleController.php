@@ -3,6 +3,7 @@
 namespace BrickTheArt\Controllers\Admin;
 
 use BrickTheArt\Controllers\DefaultController;
+use BrickTheArt\Model\Repository\InformationManager;
 
 /**
  * Class DefaultManagerController
@@ -13,16 +14,13 @@ class ArticleController extends DefaultController
     /**
      * @return
      */
-    public function addArticleAction(){
+    public function addMasterpieceAction(){
 
-    }
+        /*$masterpiece = $addmasterpieceManager->addMasterpiece();*/
 
-    /**
-     * @return
-     */
-    public function editArticleAction(){
+        return $this->twig->render('admin/add_masterpiece.html.twig');
 
-    }
+        }
 
     /**
      * @return

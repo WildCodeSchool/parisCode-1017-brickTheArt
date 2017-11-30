@@ -31,6 +31,4 @@ class HomeController extends DefaultController
 
     }
 
-
-
 }

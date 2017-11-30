@@ -13,7 +13,26 @@ use PDO;
 
 class MasterpieceManager extends EntityManager
 {
+    /**
+     *Add masterpiece in bdd
+     *@param $url
+     */
 
+    public function addMasterpiece($title,$image,$content){
+    // Préparer la requete
+
+        $req = $this->db->prepare("INSERT INTO masterpiece (title, image, content) VALUES (:title, :image, :content)");
+    // Executer la requete
+        $req->execute(array(
+        ':title' => $title,
+        ':image' => $image,
+        ':content' => $content
+        ));
+    }
+
+    /*Get masterpiece inside BO
+     *
+     */
     public function getMasterpiece() {
 
         $statement = $this->db->query('SELECT * FROM masterpiece');

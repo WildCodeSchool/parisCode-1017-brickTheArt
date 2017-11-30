@@ -3,19 +3,25 @@
 {% block body %}
 <section>
     <h2>Articles page d'accueil</h2>
+
+    <form method="post" action="index.php?page=edithome_admin">
+
     <div class="form-group">
         <div class="row">
             <div class = "col-md-12">
-                <label for="content">Informations</label>
-                <textarea name="content" rows="8" cols="80" class="form-control" id="content"></textarea>
+                <label for="phone">Information</label>
+                <textarea name="content" rows="8" cols="80" class="form-control" id="content">{{ information_home.home }}</textarea>
             </div>
         </div>
         <div class="row">
             <div class = "col-md-2">
-                <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
+                <button type="submit" class="btn btn-primary" role="button">Modifier</button>
             </div>
         </div>
     </div>
+
+    </form>
+
 </section>
 
 {% endblock %}
