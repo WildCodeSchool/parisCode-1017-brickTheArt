@@ -76,7 +76,7 @@ class ContactController extends DefaultController
 
             }
         }
-        return $this->twig->render('contact_success.html.twig');
+        return $this->twig->render('user/contact_success.html.twig');
     }
 
 }

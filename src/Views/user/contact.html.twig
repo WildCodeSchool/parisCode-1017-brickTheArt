@@ -26,7 +26,7 @@
 
                 <p>Posez-nous toutes vos questions et donnez-nous des idées pour nos prochaines créations !</p>
 
-                <form action="?page=contact" method="post">
+                <form action="index.php?page=send" method="post">
                         {{ form.input('firstname', 'Votre prénom', 'text', '51') }}
                         {% if errors.firstname is defined %} {{ errors.firstname }} {% endif %}
                         {{ form.input('lastname', 'Votre nom de famille', 'text', '51') }}
@@ -38,7 +38,7 @@
                         {{ form.input('message', 'Votre message', 'text', '300') }}
                         {% if errors.message is defined %} {{ errors.message }} {% endif %}
 
-                     <button type="button" class="btn btn-info">Envoyer</button>
+                     <button type="submit" class="btn btn-info">Envoyer</button>
                 </form>
             </div>
         </div>
