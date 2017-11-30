@@ -43,15 +43,35 @@ class ContactController extends DefaultController
                 ));
             }
 
-            /*
-            else{
+
+            else {
+
+            //On envoie les infos de contact par email
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname'];
                 $email = $_POST['email'];
                 $city = $_POST['city'];
                 $message = $_POST['message'];
-            */
 
+
+               // Create the Transport
+                $transport = (new \Swift_SmtpTransport('smtp.example.org', 25))
+                ->setUsername('your username')
+                ->setPassword('your password')
+                ;
+
+                // Create the Mailer using your created Transport
+                $mailer = new \Swift_Mailer($transport);
+
+                // Create a message
+                $message = (new \Swift_Message('Wonderful Subject'))
+                ->setFrom([$email => $firstname . $lastname])
+                ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
+                ->setBody($firstname. 'de'. $city. 'vous a envoyé un mot doux :'.$message )
+                ;
+
+                // Send the message
+                $result = $mailer->send($message);
 
 
             }
