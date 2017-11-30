@@ -18,7 +18,7 @@
 \************************************************/
 
 
-html{
+html, body{
     /* IMPORTANT CSS used for positioning the footer at the bottom of the page. */
 
     height: 100%;
@@ -30,9 +30,9 @@ body {
     display: -webkit-flex;
     flex-direction: column;
     -webkit-flex-direction: column;
-    height: 100%;
 
     font-family: 'Lato', Lucida sans unicode, sans-serif;
+    min-height: 100%;
 }
 
 @font-face {
@@ -51,6 +51,7 @@ body {
     font-size: 4em;
     text-transform: uppercase;
     font-family: 'Legothick', Lucida sans unicode, sans-serif;
+    color: #f7c001;
 }
 
 
@@ -179,10 +180,6 @@ body {
     padding-bottom: 20px;
 }
 
-.row_concept {
-    padding-bottom: 10px;
-}
-
 /************************************************\
 ==================================================
 5. MAP
@@ -239,6 +236,11 @@ iframe
 footer {
     background-color: #f7c001;
     color: #000;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    margin-top: 11em;
 }
 
 .menu{
@@ -250,7 +252,6 @@ footer {
 
 footer h5{
     font-size: 18px;
-    color: #000;
     font-weight: bold;
     margin-top: 20px;
 }
