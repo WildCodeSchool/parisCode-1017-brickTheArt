@@ -71,7 +71,7 @@ class ContactController extends DefaultController
                 ;
 
                 // Send the message
-                //$result = $mailer->send($message);
+                $result = $mailer->send($message);
 
 
             }

@@ -30,7 +30,6 @@ if (isset ($_GET['page'])) {
         if ($_GET['page'] == 'contact') {
         $contactController = new ContactController();
         echo $contactController->displayAction();
-        if
         }
 
         if ($_GET['page'] == 'success') {
