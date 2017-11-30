@@ -60,7 +60,22 @@ class SessionController extends DefaultController
      */
     public function editcontactAction(){
 
-        return $this->twig->render('admin/edit_contact.html.twig');
+        $contactManager = new ContactManager();
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+           $phone = $_POST['phone'];
+           $adress = $_POST['address'];
+           $opening= $_POST['hours'];
+            //gestion des erreurs à faire
+
+            $contactManager->updateCoordonnees($phone,$adress,$opening);
+            header ("Location: index.php?page=admin");
+
+        }else{
+            $coordonnees = $contactManager->getCoordonnees();
+            return $this->twig->render('admin/edit_contact.html.twig',array(
+                "coordonnees"=>$coordonnees,
+            ));
+        }
 
     }
 
