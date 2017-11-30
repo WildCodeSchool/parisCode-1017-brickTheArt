@@ -33,10 +33,11 @@ if (isset ($_GET['page'])) {
         echo $contactController->displayAction();
         }
 
-        if ($_GET['page'] == 'traitement') {
+        if ($_GET['page'] == 'send') {
         $contactController = new ContactController();
-        echo $contactController->traitementAction();
+        echo $contactController->contactAction();
         }
+
 
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
