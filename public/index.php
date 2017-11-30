@@ -9,6 +9,7 @@ use BrickTheArt\Controllers\Website\ConceptController;
 use BrickTheArt\Controllers\Website\BricktourController;
 use BrickTheArt\Controllers\Website\ContactController;
 use BrickTheArt\Controllers\Admin\SessionController;
+use BrickTheArt\Controllers\Admin\ArticleController;
 
 
 if (empty($_GET)){
@@ -52,10 +53,20 @@ if (isset ($_GET['page'])) {
         echo $sessionController->edithomeAction();
         }
 
-    if ($_GET['page'] == 'edit_contact') {
+        if ($_GET['page'] == 'edit_concept') {
+        $sessionController = new SessionController();
+        echo $sessionController->editconceptAction();
+        }
+
+        if ($_GET['page'] == 'edit_contact') {
         $sessionController = new SessionController();
         echo $sessionController->editcontactAction();
-    }
+        }
+
+        if ($_GET['page'] == 'add_masterpiece') {
+        $articleController = new ArticleController();
+        echo $articleController->addMasterpieceAction();
+        }
 
         if ($_GET['page'] == 'logout') {
             $sessionController = new SessionController();

@@ -44,12 +44,12 @@
     <div class="col-sm-12">
         <div class="thumbnail">
             <div class="quote">
-                <!-- Ici devra le texte de la home -->
+                <!-- Ici devra le texte de concept -->
                 <p>{{ information_concept.concept }}</p>
             </div>
             <p class="item-actions">
                 <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
-                <a href="index.php?section=edit&id=<?php echo $coordonnees['id']; ?>" class="btn btn-primary" role="button">Editer</a>
+                <a href="index.php?page=edit_concept" class="btn btn-primary" role="button">Editer</a>
             </p>
         </div>
     </div>
@@ -72,40 +72,6 @@
             </div>
         </div>
 
-        <h2>Ajouter une nouvelle Masterpiece</h2>
-
-        <div class="form-group">
-            <div class="row">
-                <div class = "col-md-12">
-                    <label for="content">Titre de l'image</label>
-                    <textarea name="content" class="form-control" id="content"></textarea>
-                </div>
-
-                <div class = "col-md-12">
-                    <label for="file">Image</label>
-
-                    <form enctype="multipart/form-data" action="upload.php" method="post">
-
-                        <input type="hidden" name="MAX_FILE_SIZE" value="1" />
-                        <input name="userfile[]" type="file" multiple/>
-                        <input type="submit" value="Envoyer le fichier" />
-
-                    </form>
-
-                </div>
-
-                <div class = "col-md-12">
-                    <label for="content">Description</label>
-                <textarea name="content" rows="8" cols="80" class="form-control" id="content"></textarea>
-                </div>
-
-            </div>
-
-                <div class="row">
-                <div class = "col-md-2">
-                    <a href="#.php?" class="btn btn-primary" role="button"> Ajouter</a>
-                </div>
-                </div>
 
             <h2>Liste des Masterpieces</h2>
 
@@ -118,7 +84,6 @@
                     <th scope="col" class="rounded">Titre</th>
                     <th scope="col" class="rounded">Image</th>
                     <th scope="col" class="rounded">Description</th>
-                    <th scope="col" class="rounded">Editer</th>
                     <th scope="col" class="rounded-q4">Supprimer</th>
                 </tr>
                 </thead>
@@ -129,13 +94,15 @@
                     <td>{{ master.title }}</td>
                     <td><img src="{{ master.image }}"></td>
                     <td>{{ master.content }}</td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
                     <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
 
                     {% endfor %}
 
                 </tbody>
+
+                <a href="index.php?page=add_masterpiece" class="btn btn-primary" role="button"> Ajouter une nouvelle masterpiece</a>
+
             </table>
 
 
