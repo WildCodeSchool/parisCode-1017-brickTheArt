@@ -1,0 +1,39 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block body %}
+
+
+<h2>Coordonnées</h2>
+<div class="form-group">
+
+    <div class="row">
+        <div class = "col-md-4">
+            <label for="phone">Téléphone</label>
+            <input name="phone" type="text" class="form-control" id="">
+        </div>
+        <div class = "col-md-2">
+            <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class = "col-md-4">
+            <label for="address">Adresse</label>
+            <input name="address" type="text" class="form-control" id="">
+        </div>
+        <div class = "col-md-2">
+            <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class = "col-md-4">
+            <label for="hours">Horaires</label>
+            <input name="hours" type="text" class="form-control" id="">
+        </div>
+        <div class = "col-md-2">
+            <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

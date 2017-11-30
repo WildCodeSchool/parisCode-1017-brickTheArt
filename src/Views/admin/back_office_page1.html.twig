@@ -3,25 +3,60 @@
 {% block body %}
 
     <section>
-        <h2>Informations page d'accueil</h2>
-        <div class="form-group">
-            <div class="row">
-                <div class = "col-md-12">
-                    <label for="content">Informations</label>
+
+        <h2>Coordonnées</h2>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="quote">
+
+                        <!-- Ici devra s'afficher les coordonnées -->
+                        <p>Téléphone :</br>
+                            {{ coordonnees.phone }}</p>
+                        <p>Adresse : </br>
+                            {{ coordonnees.adress}}</p>
+                        <p> Horaires :</br>
+                            {{ coordonnees.opening }}</p>
+                        <!-- End -->
                 </div>
-            </div>
-            <div class="row">
-                <div class = "col-md-2">
-                 <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
-                 </div>
+                <p class="item-actions">
+                    <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
+                    <a href="index.php?page=edit_contact" class="btn btn-primary" role="button">Editer</a>
+                </p>
             </div>
         </div>
 
-        
-    </section>
+        <h2>Home</h2>
+        <div class="col-sm-12">
+            <div class="thumbnail">
+                <div class="quote">
+                    <!-- Ici devra le texte de la home -->
+                    <p>{{ information_home.home }}</p>
+                </div>
+                <p class="item-actions">
+                    <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
+                    <a href="index.php?page=edithome_admin" class="btn btn-primary" role="button">Editer</a>
+                </p>
+            </div>
+        </div>
+
+
+    <h2>Concept</h2>
+    <div class="col-sm-12">
+        <div class="thumbnail">
+            <div class="quote">
+                <!-- Ici devra le texte de la home -->
+                <p>{{ information_concept.concept }}</p>
+            </div>
+            <p class="item-actions">
+                <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
+                <a href="index.php?section=edit&id=<?php echo $coordonnees['id']; ?>" class="btn btn-primary" role="button">Editer</a>
+            </p>
+        </div>
+    </div>
+
 
     <section>
-        <hr>
+
         <h2>Articles page concept</h2>
         <div class="form-group">
             <div class="row">
@@ -75,9 +110,11 @@
             <h2>Liste des Masterpieces</h2>
 
             <table id="rounded-corner">
+
+
+
                 <thead>
                 <tr>
-
                     <th scope="col" class="rounded">Titre</th>
                     <th scope="col" class="rounded">Image</th>
                     <th scope="col" class="rounded">Description</th>
@@ -87,98 +124,21 @@
                 </thead>
 
                 <tbody>
+                    {% for master in masterpiece %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ master.title }}</td>
+                    <td><img src="{{ master.image }}"></td>
+                    <td>{{ master.content }}</td>
                     <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
                     <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
-                </tr>
-
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
-                </tr>
-
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
-                </tr>
+                    {% endfor %}
 
                 </tbody>
             </table>
 
 
-    </section>
-
-    <section>
-        <hr>
-        <h2>Coordonnées</h2>
-        <div class="form-group">
-
-            <div class="row">
-                <div class = "col-md-4">
-                    <label for="phone">Téléphone</label>
-                    <input name="phone" type="text" class="form-control" id="">
-                </div>
-                <div class = "col-md-2">
-                    <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class = "col-md-4">
-                    <label for="address">Adresse</label>
-                    <input name="address" type="text" class="form-control" id="">
-                </div>
-                <div class = "col-md-2">
-                    <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class = "col-md-4">
-                    <label for="hours">Horaires</label>
-                    <input name="hours" type="text" class="form-control" id="">
-                </div>
-                <div class = "col-md-2">
-                    <a href="#.php?" class="btn btn-primary" role="button">Modifier</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -259,9 +219,6 @@
 
                 </tbody>
             </table>
-
-
-
 
 
 {% endblock %}
