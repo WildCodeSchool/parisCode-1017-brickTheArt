@@ -26,12 +26,17 @@
 
                 <p>Posez-nous toutes vos questions et donnez-nous des idées pour nos prochaines créations !</p>
 
-                <form action="?id=contact" method="post">
+                <form action="?page=contact" method="post">
                         {{ form.input('firstname', 'Votre prénom', 'text', '51') }}
+                        {% if errors.firstname is defined %} {{ errors.firstname }} {% endif %}
                         {{ form.input('lastname', 'Votre nom de famille', 'text', '51') }}
+                        {% if errors.lastname is defined %} {{ errors.lastname }} {% endif %}
                         {{ form.input('email', 'Votre email', 'email', '51') }}
+                        {% if errors.email is defined %} {{ errors.email }} {% endif %}
                         {{ form.input('city', 'Votre ville ou votre code postal', 'text', '51') }}
+                        {% if errors.city is defined %} {{ errors.city }} {% endif %}
                         {{ form.input('message', 'Votre message', 'text', '300') }}
+                        {% if errors.message is defined %} {{ errors.message }} {% endif %}
 
                      <button type="button" class="btn btn-info">Envoyer</button>
                 </form>
