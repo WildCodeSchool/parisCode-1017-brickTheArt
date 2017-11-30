@@ -47,6 +47,16 @@ if (isset ($_GET['page'])) {
         echo $sessionController->loginsuccessAction();
         }
 
+        if ($_GET['page'] == 'edithome_admin') {
+        $sessionController = new SessionController();
+        echo $sessionController->edithomeAction();
+        }
+
+    if ($_GET['page'] == 'edit_contact') {
+        $sessionController = new SessionController();
+        echo $sessionController->editcontactAction();
+    }
+
         if ($_GET['page'] == 'logout') {
             $sessionController = new SessionController();
             echo $sessionController->logoutAction();
