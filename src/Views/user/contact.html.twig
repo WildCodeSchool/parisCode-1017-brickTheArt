@@ -38,7 +38,7 @@
                         {% if errors.city is defined %} {{ errors.city }} {% endif %}
                         {{ form.input('message', 'Votre message', 'text', '300') }}
                         {% if errors.message is defined %} {{ errors.message }} {% endif %}
-                     <div class="g-recaptcha contact_input" data-sitekey="your_site_key"></div>
+                     <div align="center" class="g-recaptcha contact_input" data-sitekey="your_site_key"></div>
                      <button type="submit" class="btn btn-info">Envoyer</button>
                 </form>
             </div>
