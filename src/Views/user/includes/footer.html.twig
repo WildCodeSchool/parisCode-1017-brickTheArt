@@ -7,28 +7,30 @@
             <div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-10 col_footer">
                 <div class="list-brick-the-art">
                     <h5>Brick The Art</h5>
-                    <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="index.php?page=concept">Le concept</a></li>
-                        <li><a href="index.php?page=bricktour">Brick Tour</a></li>
+                    <ul class="menu">
+                        <li><a class="topic" href="index.php">Home</a></li>
+                        <li><a class="topic" href="index.php?page=concept">Le concept</a></li>
+                        <li><a class="topic" href="index.php?page=bricktour">Brick Tour</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-10 col_footer">
                 <div class="social-networks">
-                    <a href="https://twitter.com/nathansawaya" class="twitter grow" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://www.facebook.com/thebrickartist" class="facebook grow" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                    <a href="https://www.instagram.com/lego/?hl=fr" class="instagram grow" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <ul class="soc">
+                        <li><a href="https://www.facebook.com/thebrickartist" class="soc-facebook grow" target="_blank"></a></li>
+                        <li><a href="https://www.instagram.com/lego/?hl=fr" class="soc-instagram grow" target="_blank"></a></li>
+                        <li><a href="https://twitter.com/nathansawaya" class="soc-twitter soc-icon-last grow" target="_blank"></a></li>
+                    </ul>
                 </div>
             </div>
 
             <div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-10 col_footer">
                 <h5>Contact</h5>
-                <ul>
+                <ul class="menu">
                     <li>{{ coordonnees.phone }}</li>
                     <li>{{ coordonnees.adress }}</li>
-                    <li><a href="index.php?page=contact">Nous contacter</a></li>
+                    <li><a class="topic" href="index.php?page=contact">Nous contacter</a></li>
                 </ul>
             </div>
 
@@ -38,10 +40,10 @@
         <div class="row row_footer">
 
             <div class="col-md-offset-4 col-md-4 col_footer">
-                <a>Mentions légales</a>
+                <a class="topic">Mentions légales</a>
                 <p> © 2017 Copyright Lego </p>
                 <p> Made by CAC </p>
-                <a href="index.php?page=login">Espace administrateur</a>
+                <a class="topic" href="index.php?page=login">Espace administrateur</a>
             </div>
         </div>
 
