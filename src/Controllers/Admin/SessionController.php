@@ -14,13 +14,14 @@ use BrickTheArt\Model\Repository\MasterpieceManager;
 class SessionController extends DefaultController
 {
     /**
+     * //permet de me trouver sur la page de login côté admin
      * @return string
      */
     public function loginAction()
     {
 
         return $this->twig->render('admin/login_admin.html.twig');
-        //permet de me trouver sur la page de login côté admin
+
     }
 
     /**permet de me trouver sur la première page du BO

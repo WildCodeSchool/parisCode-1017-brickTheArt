@@ -94,7 +94,7 @@
                     <td>{{ master.title }}</td>
                     <td><img src="{{ master.image }}"></td>
                     <td>{{ master.content }}</td>
-                    <td><a href="#" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="index.php?page=delete_masterpiece&id={{ master.id }}" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
 
                     {% endfor %}
