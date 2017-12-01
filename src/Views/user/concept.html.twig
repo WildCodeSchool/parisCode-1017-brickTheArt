@@ -3,26 +3,20 @@
 {% block body %}
 
     <!-- CONTAINER -->
-    <div class="container">
 
-
-        <section class="concept_about">
-
+    <section class="concept_about">
+        <div class="container">
             <h2 class="section_title">Le Concept de Brick The Art</h2>
-
             <p>{{ information.concept }}</p>
+        </div>
+    </section>
 
-        </section>
 
-
-
-        <section class="concept_news">
-
+    <section class="concept_news">
+        <div class="container">
             <h2 class="section_title">Articles</h2>
 
              {% for master in masterpiece %}
-
-                <div class="concept_article">
 
 
                     <div class="concept col-md-6 col-xs-12">
@@ -36,10 +30,9 @@
                         <p>{{ master.content }}</p>
 
                         </div>
-                </div>
 
              {% endfor %}
-        </section>
+        </div>
+    </section>
 
-    </div>
 {% endblock %}
