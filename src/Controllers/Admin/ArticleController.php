@@ -54,20 +54,20 @@ class ArticleController extends DefaultController
      * Suppression d'une image
      * @return
      */
-    public function deleteMasterpieceAction(){
+    public function deleteMasterpieceAction()
+    {
 
         // Récupération de l'id d'image à supprimer
         $id = $_GET['id'];
         // Vérification que le paramètre id est bien un nombre (sécurité) et Si c'est bien un nombre, on traite la demande
-        if (is_numeric($id)){
-
+        if (is_numeric($id)) {
             // Appel de la fonction du model permettant de supprimer une image précise
             $masterpiecemanager = new MasterpieceManager();
             $masterpiecemanager->deleteMasterpiece($id);
 
             //renvoi à la page admin si succès
-            header('Location: index.php?page=admin'); array(
-                "id" => $id);
+            header('Location: index.php?page=admin');
+        } else {
+            header('Location: index.php');
         }
-    }
-}
+    }}
