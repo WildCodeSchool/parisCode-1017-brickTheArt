@@ -13,11 +13,11 @@ use PDO;
 
 class MasterpieceManager extends EntityManager
 {
+
     /**
      *Add masterpiece in bdd
      *@param $url
      */
-
     public function addMasterpiece($title,$image,$content){
     // Préparer la requete
 
@@ -30,14 +30,27 @@ class MasterpieceManager extends EntityManager
         ));
     }
 
-    /*Get masterpiece inside BO
-     *
-     */
-    public function getMasterpiece() {
+
+
+    public function getMasterpiece()
+    {
 
         $statement = $this->db->query('SELECT * FROM masterpiece');
         return $statement->fetchAll(PDO::FETCH_CLASS, Masterpiece::class);
     }
 
+
+    /**
+     * Suppression d'une masterpiece
+     * @param  [int] $id Id de la masterpiece
+     */
+    public function deleteMasterpiece($id){
+
+       $req = $this->db->prepare("DELETE FROM masterpiece WHERE id=:id");
+       $req ->execute(array(
+       ':id'=> $id
+       ));
+
+    }
 
 }

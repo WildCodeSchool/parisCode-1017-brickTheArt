@@ -4,41 +4,16 @@
 
 <h2>Ajouter une nouvelle Masterpiece</h2>
 
-    <form method="post" action="index.php?page=add_masterpiece">
-
-<div class="form-group">
-    <div class="row">
-        <div class = "col-md-12">
-            <label for="content">Titre de l'image</label>
-            <textarea name="content" class="form-control" id="content"></textarea>
-        </div>
-
-        <div class = "col-md-12">
-            <label for="file">Image</label>
-
-            <form enctype="multipart/form-data" action="upload.php" method="post">
-
-                <input type="hidden" name="MAX_FILE_SIZE" value="1" />
-                <input name="userfile[]" type="file"/>
-
-            </form>
-
-        </div>
-
-        <div class = "col-md-12">
-            <label for="content">Description</label>
-            <textarea name="content" rows="8" cols="80" class="form-control" id="content"></textarea>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class = "col-md-2">
-            <button type="submit" class="btn btn-primary" role="button">Enregistrer</button>
-        </div>
-    </div>
-
-</div>
+    <form method="post" action="index.php?page=admin" enctype="multipart/form-data">
+        <label for="mon_fichier">Image (JPG, PNG| max. 1 Mo) :</label><br />
+        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+        <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+        <label for="titre">Titre de l'image (max. 100 caractères) :</label><br />
+        <input type="text" name="titre" value="Titre de l'image" id="titre" /><br />
+        <label for="description">Description de votre image :</label><br />
+        <textarea name="description" id="description"></textarea><br />
+        <input type="submit" name="submit" value="Envoyer" />
     </form>
+
 
 {% endblock %}

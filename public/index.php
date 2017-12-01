@@ -24,8 +24,8 @@ if (isset ($_GET['page'])) {
         }
 
         if ($_GET['page'] == 'bricktour') {
-            $bricktourController = new BricktourController();
-            echo $bricktourController->displayAction();
+        $bricktourController = new BricktourController();
+        echo $bricktourController->displayAction();
         }
 
         if ($_GET['page'] == 'contact') {
@@ -37,7 +37,6 @@ if (isset ($_GET['page'])) {
         $contactController = new ContactController();
         echo $contactController->contactAction();
         }
-
 
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
@@ -69,9 +68,14 @@ if (isset ($_GET['page'])) {
         echo $articleController->addMasterpieceAction();
         }
 
+        if($_GET['page'] == 'delete_masterpiece'){
+        $articleController = new ArticleController();
+        echo $articleController->deleteMasterpieceAction();
+        }
+
         if ($_GET['page'] == 'logout') {
-            $sessionController = new SessionController();
-            echo $sessionController->logoutAction();
+        $sessionController = new SessionController();
+        echo $sessionController->logoutAction();
         }
 
 }
