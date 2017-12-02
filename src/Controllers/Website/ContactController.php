@@ -21,7 +21,8 @@ class ContactController extends DefaultController
             "coordonnees"=>$coordonnees
         ));
 
-        //gestion des erreurs, avec au départ $errors = 0. (header:"Location:index.php?page=success", etc)
+        //gestion des erreurs, avec au départ $errors = 0.
+
 
     }
 
@@ -29,29 +30,24 @@ class ContactController extends DefaultController
      * @return string
      */
     public function contactAction(){
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errors = [];
-            foreach ($_POST as $key => $value){
+            foreach (["firstname", "lastname", "email", "city", "message"] as $key){
                 if (empty($_POST[$key])) {
                     $errors[$key] = "Veuillez renseigner le champ " . $key;
                 }
             }
-            if (!empty($errors)){
-                return $this->twig->render('contact.html.twig', array(
+            if (!empty($errors)) {
+                return $this->twig->render('user/contact.html.twig', array(
                     'errors' => $errors
                 ));
-            }
-
-
-            else {
-
-            //On envoie les infos de contact par email
+            } else {
+                //On envoie les infos de contact par email
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname'];
                 $email = $_POST['email'];
                 $city = $_POST['city'];
                 $message = $_POST['message'];
-
 
                 // Create the Transport
                 $transport = (new \Swift_SmtpTransport('smtp.mailtrap.io', 2525))
@@ -63,21 +59,18 @@ class ContactController extends DefaultController
                 // Create the Mailer using your created Transport
                 $mailer = new \Swift_Mailer($transport);
 
-
                 // Create a message
                 $message = (new \Swift_Message('Another brick in the wall'))
-                ->setFrom([$email => $firstname . $lastname])
-                ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
-                ->setBody($firstname. 'de'. $city. 'vous a écrit :'.$message )
+                    ->setFrom([$email => $firstname . $lastname])
+                    ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
+                    ->setBody($firstname. 'de'. $city. 'vous a écrit :'.$message )
                 ;
 
                 // Send the message
                 $result = $mailer->send($message);
 
-
+                return $this->twig->render('user/contact_success.html.twig');
             }
         }
-        return $this->twig->render('user/contact_success.html.twig');
     }
-
 }
