@@ -38,6 +38,11 @@ if (isset ($_GET['page'])) {
         echo $contactController->contactAction();
         }
 
+        /*if($_GET['page'] == 'success') {
+        $contactController = new ContactController();
+        echo $contactController->contactAction();
+        }*/
+
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
         echo $sessionController->loginAction();
