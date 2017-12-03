@@ -4,7 +4,6 @@ namespace BrickTheArt\Controllers\Website;
 
 use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
-
 /**
  * Class DefaultManagerController
  * @package MyApp\ManagerController
@@ -22,31 +21,56 @@ class ContactController extends DefaultController
             "coordonnees"=>$coordonnees
         ));
 
-        //gestion des erreurs, avec au départ $errors = 0. (header:"Location:index.php?page=success", etc)
+        //gestion des erreurs, avec au départ $errors = 0.
+
 
     }
 
     /**
      * @return string
      */
+    public function contactAction(){
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $errors = [];
+            foreach (["firstname", "lastname", "email", "city", "message"] as $key){
+                if (empty($_POST[$key])) {
+                    $errors[$key] = "Veuillez renseigner le champ " . $key;
+                }
+            }
+            if (!empty($errors)) {
+                return $this->twig->render('user/contact.html.twig', array(
+                    'errors' => $errors
+                ));
+            } else {
+                //On envoie les infos de contact par email
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
+                $email = $_POST['email'];
+                $city = $_POST['city'];
+                $message = $_POST['message'];
 
-    /*public function successAction(){
+                // Create the Transport
+                $transport = (new \Swift_SmtpTransport('smtp.mailtrap.io', 2525))
+                    ->setUsername('3cbb483438cb93')
+                    ->setPassword('9550b5a8c720b6')
+                    ->setAuthMode('cram-md5')
+                ;
 
-        On répertorie les erreurs dans un tableau $error
+                // Create the Mailer using your created Transport
+                $mailer = new \Swift_Mailer($transport);
 
-        Si on se trouve en méthode POST
-            * Si $erreur de firstname, lastname, email, city ou message > 0 -> render la vue page de contact avec les champs pré-remplis
-            * Sinon -> render la vue page de succès ;
-                    -> envoi des infos par email;
-        Sinon, on demeure par défaut dans la page de contact
+                // Create a message
+                $message = (new \Swift_Message('Another brick in the wall'))
+                    ->setFrom([$email => $firstname . $lastname])
+                    ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
+                    ->setBody($firstname. 'de'. $city. 'vous a écrit :'.$message )
+                ;
 
+                // Send the message
+                $result = $mailer->send($message);
 
-
-
+                return $this->twig->render('user/contact_success.html.twig');
+            }
         }
-
-        return $this->twig->render('user/contact_success.html.twig')
-
-    }*/
-
+    }
 }

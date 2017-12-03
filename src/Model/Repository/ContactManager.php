@@ -24,4 +24,14 @@ class ContactManager extends EntityManager
         $statement = $this->db->query('SELECT * FROM contact_information');
         return $statement->fetchObject(Contact::class);
     }
+
+    public function updateCoordonnees($phone,$adress,$opening){
+
+        $statement = $this->db->prepare('UPDATE contact_information SET phone=:phone,adress=:adress,opening=:opening');
+        $statement->execute(array(
+            ":phone"=>$phone,
+            ":adress"=>$adress,
+            ":opening"=>$opening,
+        ));
+    }
 }

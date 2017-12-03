@@ -9,6 +9,7 @@ use BrickTheArt\Controllers\Website\ConceptController;
 use BrickTheArt\Controllers\Website\BricktourController;
 use BrickTheArt\Controllers\Website\ContactController;
 use BrickTheArt\Controllers\Admin\SessionController;
+use BrickTheArt\Controllers\Admin\ArticleController;
 
 
 if (empty($_GET)){
@@ -23,8 +24,8 @@ if (isset ($_GET['page'])) {
         }
 
         if ($_GET['page'] == 'bricktour') {
-            $bricktourController = new BricktourController();
-            echo $bricktourController->displayAction();
+        $bricktourController = new BricktourController();
+        echo $bricktourController->displayAction();
         }
 
         if ($_GET['page'] == 'contact') {
@@ -32,10 +33,15 @@ if (isset ($_GET['page'])) {
         echo $contactController->displayAction();
         }
 
-        if ($_GET['page'] == 'traitement') {
+        if ($_GET['page'] == 'send') {
         $contactController = new ContactController();
-        echo $contactController->traitementAction();
+        echo $contactController->contactAction();
         }
+
+        /*if($_GET['page'] == 'success') {
+        $contactController = new ContactController();
+        echo $contactController->contactAction();
+        }*/
 
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
@@ -52,14 +58,29 @@ if (isset ($_GET['page'])) {
         echo $sessionController->edithomeAction();
         }
 
-    if ($_GET['page'] == 'edit_contact') {
+        if ($_GET['page'] == 'edit_concept') {
+        $sessionController = new SessionController();
+        echo $sessionController->editconceptAction();
+        }
+
+        if ($_GET['page'] == 'edit_contact') {
         $sessionController = new SessionController();
         echo $sessionController->editcontactAction();
-    }
+        }
+
+        if ($_GET['page'] == 'add_masterpiece') {
+        $articleController = new ArticleController();
+        echo $articleController->addMasterpieceAction();
+        }
+
+        if($_GET['page'] == 'delete_masterpiece'){
+        $articleController = new ArticleController();
+        echo $articleController->deleteMasterpieceAction();
+        }
 
         if ($_GET['page'] == 'logout') {
-            $sessionController = new SessionController();
-            echo $sessionController->logoutAction();
+        $sessionController = new SessionController();
+        echo $sessionController->logoutAction();
         }
 
 }
