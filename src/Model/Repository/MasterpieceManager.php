@@ -18,19 +18,25 @@ class MasterpieceManager extends EntityManager
      *Add masterpiece in bdd
      *@param $url
      */
-    public function addMasterpiece($title,$image,$content){
+    public function addMasterpiece($title, $content, $image){
     // Préparer la requete
-
         $req = $this->db->prepare("INSERT INTO masterpiece (title, image, content) VALUES (:title, :image, :content)");
     // Executer la requete
         $req->execute(array(
-        ':title' => $title,
-        ':image' => $image,
-        ':content' => $content
+            ':title' => $title,
+            ':image' => $image,
+            ':content' => $content
         ));
     }
 
-
+    public function getOneMasterpiece($id)
+    {
+        $statement = $this->db->prepare('SELECT * FROM masterpiece WHERE id=:id');
+        $statement->execute(array(
+            ':id'=> $id
+        ));
+        return $statement->fetchObject( Masterpiece::class);
+    }
 
     public function getMasterpiece()
     {
@@ -50,6 +56,17 @@ class MasterpieceManager extends EntityManager
        $req ->execute(array(
        ':id'=> $id
        ));
+
+    }
+
+    public function updateMasterpiece($id, $title, $content)
+    {
+        $req = $this->db->prepare("UPDATE masterpiece SET title=:title, content=:content WHERE id=:id");
+        $req ->execute(array(
+            ':id'=> $id,
+            ':title' => $title,
+            ':content'=> $content
+        ));
 
     }
 

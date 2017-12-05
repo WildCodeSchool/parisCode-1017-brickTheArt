@@ -47,11 +47,4 @@ class InformationManager extends EntityManager
             ":concept" => $concept,
         ));
     }
-
-    /*public function addMasterpiece()
-    {
-
-
-    }
-*/
 }

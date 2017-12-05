@@ -1,0 +1,33 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block body %}
+
+    <section>
+
+        <form method="post" action="index.php?page=edit_masterpiece&id={{ masterpiece.id }}">
+
+            <div class="form-group">
+                <div class="row">
+                    <div class = "col-md-12">
+                        <label for="phone">Information</label>
+                        <textarea name="description" rows="8" cols="80" class="form-control" id="content">{{ masterpiece.content }}</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "col-md-2">
+                        <input type="text" name="titre" value="{{ masterpiece.title }}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class = "col-md-2">
+                        <button type="submit" class="btn btn-primary" role="button">Modifier</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+
+{% endblock %}

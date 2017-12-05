@@ -87,10 +87,10 @@
                     {% for master in masterpiece %}
                 <tr>
                     <td>{{ master.title }}</td>
-                    <td><img class="img_masterpiece" src="{{ master.image }}"></td>
+                    <td><img class="img_masterpiece" src="uploads/{{ master.image }}"></td>
                     <td>{{ master.content }}</td>
                     
-                    <td><a href="#"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="index.php?page=edit_masterpiece&id={{ master.id }}"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
                     <td><a href="index.php?page=delete_masterpiece&id={{ master.id }}" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
 
                 </tr>
