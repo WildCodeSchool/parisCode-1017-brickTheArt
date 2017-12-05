@@ -68,6 +68,11 @@ if (isset ($_GET['page'])) {
         echo $articleController->addMasterpieceAction();
         }
 
+        if ($_GET['page'] == 'edit_masterpiece') {
+        $articleController = new ArticleController();
+        echo $articleController->editMasterpieceAction();
+    }
+
         if($_GET['page'] == 'delete_masterpiece'){
         $articleController = new ArticleController();
         echo $articleController->deleteMasterpieceAction();
