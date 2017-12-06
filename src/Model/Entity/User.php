@@ -57,13 +57,11 @@ class User
     }
 
     /**
-     * @param int $id
+     * @return int
      */
-    public function setId($id)
+    public function getId()
     {
-        $this->id = $id;
+        return $this->id;
     }
-
-
 
 }

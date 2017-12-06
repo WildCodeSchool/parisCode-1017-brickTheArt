@@ -49,6 +49,7 @@ if (isset ($_GET['page'])) {
         echo $sessionController->loginAction();
         }
 
+        if(isset($_SESSION['login'])&& isset($_GET['section'])){
         if ($_GET['page'] == 'admin') {
         $sessionController = new SessionController();
         echo $sessionController->loginsuccessAction();
@@ -77,16 +78,16 @@ if (isset ($_GET['page'])) {
         if ($_GET['page'] == 'edit_masterpiece') {
         $articleController = new ArticleController();
         echo $articleController->editMasterpieceAction();
-    }
+        }
 
         if($_GET['page'] == 'delete_masterpiece'){
         $articleController = new ArticleController();
         echo $articleController->deleteMasterpieceAction();
         }
 
-        if ($_GET['page'] == 'logout') {
-        $sessionController = new SessionController();
-        echo $sessionController->logoutAction();
         }
-
+        if ($_GET['page'] == 'logout') {
+            $sessionController = new SessionController();
+            echo $sessionController->logoutAction();
+        }
 }

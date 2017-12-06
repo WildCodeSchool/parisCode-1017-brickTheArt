@@ -36,41 +36,12 @@ class UserManager extends EntityManager
 	/**
 	 * Get password
 	 */
-	public function getPassword($password){
-	    $statement = $this->db->prepare("SELECT password from user");
+	public function getPassword($login){
+	    $statement = $this->db->prepare("SELECT * FROM user WHERE login = :login ");
 	    $statement->execute([
-	        ':password' => $password
+	        ':login' => $login
         ]);
-        return $statement->fetch();
+        return $statement->fetchObject( User::class);
 	}
 
-
-    /**
-     * Get login
-     */
-    public function getLogin($login){
-        $statement = $this->db->prepare("SELECT login from user");
-        $statement->execute([
-            ':login' => $login
-        ]);
-        return $statement->fetch();
-    }
-
-
-
-
-
-	/**
-	 * Update one user
-	 */
-	public function update(){
-//		....
-	}
-
-	/**
-	 * Delete one user
-	 */
-	public function delete(){
-//		....
-	}
 }

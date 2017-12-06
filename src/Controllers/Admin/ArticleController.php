@@ -57,7 +57,7 @@ class ArticleController extends DefaultController
                     $masterpiecemanager = new MasterpieceManager();
                     $masterpiecemanager->addMasterpiece($title, $content, $uploadedfile->getFileName());
 
-                    header('Location: index.php?page=admin');
+                    header('Location: index.php?section=admin&page=admin');
                 }
             }
         } else{
@@ -83,7 +83,7 @@ class ArticleController extends DefaultController
             $masterpiecemanager = new MasterpieceManager();
             $masterpiecemanager->updateMasterpiece($id, $title, $content);
             //renvoi à la page admin si succès
-            header('Location: index.php?page=admin');
+            header('Location: index.php?section=admin&section=admin&page=admin');
 
 //GESTION DES ERREURS
             //SI MESSAGE DERREUR
@@ -108,7 +108,7 @@ class ArticleController extends DefaultController
 //            $masterpiecemanager = new MasterpieceManager();
 //            $masterpiecemanager->updateMasterpiece($id, $title, $image, $content);
 //            //renvoi à la page admin si succès
-//            header('Location: index.php?page=admin');
+//            header('Location: index.php?section=admin&page=admin');
 //        } else {
 //            header('Location: index.php');
 //        }
@@ -130,7 +130,7 @@ class ArticleController extends DefaultController
             $masterpiecemanager->deleteMasterpiece($id);
 
             //renvoi à la page admin si succès
-            header('Location: index.php?page=admin');
+            header('Location: index.php?section=admin&page=admin');
         } else {
             header('Location: index.php');
         }
