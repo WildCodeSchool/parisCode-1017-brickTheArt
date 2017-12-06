@@ -6,6 +6,7 @@ use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
 use BrickTheArt\Model\Repository\InformationManager;
 use BrickTheArt\Model\Repository\MasterpieceManager;
+use BrickTheArt\Model\Repository\UserManager;
 
 /**
  * Class DefaultManagerController
@@ -18,11 +19,66 @@ class SessionController extends DefaultController
      * @return string
      */
     public function loginAction()
-    {
 
-        return $this->twig->render('admin/login_admin.html.twig');
+
+        //On fait appel à la base
+        //on initialise nos messages d’ erreurs
+        //On vérifie les input
+        //Si le login et password inséré correspondent à un login et mot de passe trouvé en base ( $data[‘login’] ), alors on ouvre une session avec les valeurs assignées
+        //On affiche un message de succès et on redirige vers la partie admin
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
+        var_dump($_POST);die();
+            //$userManager = new UserManager();
+            //$passwordUser = $userManager->getPassword($password);
+            //$loginUser = $userManager->getLogin($login);
+
+            $errors = [];
+            foreach ($_POST as $key => $value) {
+                if (empty($_POST[$key])) {
+                    $errors[$key] = "Veuillez renseigner le champ " . $key;
+                }
+            }
+
+            if (!empty($errors)) {
+                return $this->twig->render('admin/login_admin.html.twig', array(
+                    'errors' => $errors
+                ));
+            }else {
+                $login = $_POST['login'];
+                $password = $_POST ['password'];
+
+
+
+
+            /*if ($valid) {
+                if ($passwordUser['password'] == $password && $loginUser['login'] == $login ) // Acces OK ! s'il y a des données et qu'elle correspondent
+                {
+                    session_start(); //on ouvre la session
+                    $_SESSION['login'] = $loginUser['login'];//on assigne nos valeurs
+                    $_SESSION['password'] = $passwordUser['password'];
+
+                    echo '<p>Bienvenue '.$loginUser['login'].', 
+			vous êtes maintenant connecté!</p>
+			<p>Cliquez <a href="#">ici</a> 
+			pour revenir à la page d accueil</p>';
+                    header('location:index.php'); //et on renvoie vers l'index
+                }
+
+
+                else // Acces refusé on reste sur la page!
+                {
+                    echo '<p>Une erreur s\'est produite 
+	    pendant votre identification.<br /> Le mot de passe ou le pseudo 
+            entré n\'est pas correcte.</p><p>Cliquez <a href="./login.php">ici</a>';
+
+
+                }}}*/
+
+    }}return $this->twig->render('admin/login_admin.html.twig');
 
     }
+
 
     /**permet de me trouver sur la première page du BO
      * @return string
@@ -46,7 +102,6 @@ class SessionController extends DefaultController
             "information_concept" => $conceptinformation,
             "masterpiece" => $masterpiece
         ));
-
     }
 
 

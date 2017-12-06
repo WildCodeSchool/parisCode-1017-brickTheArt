@@ -11,6 +11,7 @@ use BrickTheArt\Controllers\Website\ContactController;
 use BrickTheArt\Controllers\Admin\SessionController;
 use BrickTheArt\Controllers\Admin\ArticleController;
 
+session_start();
 
 if (empty($_GET)){
 	$homeController = new HomeController();

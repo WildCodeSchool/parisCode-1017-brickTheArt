@@ -8,46 +8,62 @@ namespace BrickTheArt\Model\Entity;
  */
 class User
 {
-	/**
-	 * @var string
-	 */
-	private $name;
+    /**
+     * @var int
+     */
+    private $id;
 
-	/**
-	 * @var string
-	 */
-	private $firstname;
+    /**
+     * @var string
+     */
+    private $login;
 
-	/**
-	 * @return string
-	 */
-	public function getName()
-	{
-		return $this->name;
-	}
 
-	/**
-	 * @param string $name
-	 */
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
+    /**
+     * @var string
+     */
+    private $password;
 
-	/**
-	 * @return string
-	 */
-	public function getFirstname()
-	{
-		return $this->firstname;
-	}
+    /**
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
 
-	/**
-	 * @param string $firstname
-	 */
-	public function setFirstname($firstname)
-	{
-		$this->firstname = $firstname;
-	}
+    /**
+     * @param string $login
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
 
 }

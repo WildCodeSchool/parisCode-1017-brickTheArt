@@ -34,11 +34,31 @@ class UserManager extends EntityManager
 	}
 
 	/**
-	 * Add one user
+	 * Get password
 	 */
-	public function add(){
-//		....
+	public function getPassword($password){
+	    $statement = $this->db->prepare("SELECT password from user");
+	    $statement->execute([
+	        ':password' => $password
+        ]);
+        return $statement->fetch();
 	}
+
+
+    /**
+     * Get login
+     */
+    public function getLogin($login){
+        $statement = $this->db->prepare("SELECT login from user");
+        $statement->execute([
+            ':login' => $login
+        ]);
+        return $statement->fetch();
+    }
+
+
+
+
 
 	/**
 	 * Update one user
