@@ -6,6 +6,7 @@ use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
 use BrickTheArt\Model\Repository\InformationManager;
 use BrickTheArt\Model\Repository\MasterpieceManager;
+use BrickTheArt\Model\Repository\UserManager;
 
 /**
  * Class DefaultManagerController
@@ -14,22 +15,59 @@ use BrickTheArt\Model\Repository\MasterpieceManager;
 class SessionController extends DefaultController
 {
     /**
-     * //permet de me trouver sur la page de login côté admin
+     * //permet de me trouver sur la page de login pour me connecter à la partie admin
      * @return string
      */
-    public function loginAction()
-    {
+        public function loginAction()
+        {
 
-        return $this->twig->render('admin/login_admin.html.twig');
+            //On fait appel à la base de données et on stock ici
+            $userManager = new UserManager();
+            //$passwordUser = $userManager->getPassword();
+            //$loginUser = $userManager->getLogin();
 
-    }
+            //on initialise nos messages d’erreurs et on verifie si les input sont bien remplis
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
+                //var_dump($_POST);die();
+                $errors = [];
+                foreach ($_POST as $key => $value) {
+                    if (empty($_POST[$key])) {
+                        $errors[$key] = "Veuillez renseigner le champ " . $key;
+                    }
+                }
+                if (!empty($errors)) {
+                    return $this->twig->render('admin/login_admin.html.twig', array(
+                        'errors' => $errors
+                    ));
+                } else {
+                    $login = $_POST['login'];
+                    $password = $_POST ['password'];
+                    $user= $userManager->getPassword($login);
+
+                    if(empty($user)){
+                        return $this->twig->render('admin/login_admin.html.twig');
+                    }
+
+                    //Si le login et password insérés correspondent à un login et mot de passe trouvés en base ( $data[‘login’] ), alors on ouvre une session avec les valeurs assignées
+                    if (password_verify($password,$user->getPassword())) // Acces OK ! les données correspondent
+                    {
+                        $_SESSION['login'] =$user->getLogin();
+                        header('Location:index.php?section=admin&page=admin');
+
+                        //On affiche un message de succès et on redirige vers la partie admin
+                    } else {
+                     return $this->twig->render('admin/login_admin.html.twig');
+                }
+                }
+            } return $this->twig->render('admin/login_admin.html.twig');
+        }
+
 
     /**permet de me trouver sur la première page du BO
      * @return string
      */
     public function loginSuccessAction()
     {
-
         $contactManager = new ContactManager();
         $informationManager = new InformationManager();
         $masterpieceManager = new MasterpieceManager();
@@ -46,7 +84,6 @@ class SessionController extends DefaultController
             "information_concept" => $conceptinformation,
             "masterpiece" => $masterpiece
         ));
-
     }
 
 
@@ -64,13 +101,13 @@ class SessionController extends DefaultController
             $adress = $_POST['address'];
             $opening = $_POST['hours'];
 
-            /*gestion des erreurs A VOIR AVEC FLORIAN
+            /*gestion des erreurs A VOIR
             if (!preg_match('#^0[1-68][0-9]{8}$#', $phone)) {
                 $errors['phone'] = "Merci de saisir un téléphone valide";
             }*/
 
             $contactManager->updateCoordonnees($phone, $adress, $opening);
-            header("Location: index.php?page=admin");
+            header("Location: index.php?section=admin&page=admin");
 
         } else {
             $coordonnees = $contactManager->getCoordonnees();
@@ -94,7 +131,7 @@ class SessionController extends DefaultController
             $content = $_POST['content'];
 
             $informationManager->updateInformation($content);
-            header("Location: index.php?page=admin");
+            header("Location: index.php?section=admin&page=admin");
         } else {
 
             return $this->twig->render('admin/edithome_admin.html.twig', array(
@@ -118,7 +155,7 @@ class SessionController extends DefaultController
             $content = $_POST['content'];
 
             $informationManager->updateInformationContent($content);
-            header("Location: index.php?page=admin");
+            header("Location: index.php?section=admin&page=admin");
         } else {
 
             return $this->twig->render('admin/edit_concept.html.twig', array(
@@ -133,8 +170,8 @@ class SessionController extends DefaultController
      * @return string
      */
     public function logoutAction(){
-
-        return $this->twig->render('admin/successlogout.html.twig');
+        session_destroy();
+        header('Location:index.php?page=login');
     }
 
 }
