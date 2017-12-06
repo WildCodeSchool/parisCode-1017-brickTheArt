@@ -10,6 +10,7 @@ use BrickTheArt\Controllers\Website\BricktourController;
 use BrickTheArt\Controllers\Website\ContactController;
 use BrickTheArt\Controllers\Admin\SessionController;
 use BrickTheArt\Controllers\Admin\ArticleController;
+use BrickTheArt\Controllers\Admin\MarkerController;
 
 
 if (empty($_GET)){
@@ -37,11 +38,6 @@ if (isset ($_GET['page'])) {
         $contactController = new ContactController();
         echo $contactController->contactAction();
         }
-
-        /*if($_GET['page'] == 'success') {
-        $contactController = new ContactController();
-        echo $contactController->contactAction();
-        }*/
 
         if ($_GET['page'] == 'login') {
         $sessionController = new SessionController();
@@ -83,9 +79,20 @@ if (isset ($_GET['page'])) {
         echo $articleController->deleteMasterpieceAction();
         }
 
+        if ($_GET['page'] == 'add_marker') {
+            $markerController = new MarkerController();
+            echo $markerController->addMarkerAction();
+        }
+
+        if ($_GET['page' == 'delete_marker']) {
+           $markerController = new MarkerController();
+           echo $markerController->deleteMarkerAction();
+        }
+
         if ($_GET['page'] == 'logout') {
         $sessionController = new SessionController();
         echo $sessionController->logoutAction();
         }
+
 
 }

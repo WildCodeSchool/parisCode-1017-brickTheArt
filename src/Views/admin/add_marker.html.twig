@@ -1,0 +1,64 @@
+{% extends 'layout_admin.html.twig'  %}
+
+{% block body %}
+
+
+    <h3>Ajoutez une nouvelle étape au Brick Tour !</h3>
+
+    <div id="map"></div>
+
+    <section>
+
+        <form method="post" action="index.php?page=add_marker">
+            <div>
+                <label for="event">Nom de l'événement</label>
+                <input type="text" id="event" name="event">
+                {% if errors.event is defined %} {{ errors.event }} {% endif %}
+            </div>
+
+            <div>
+                <label for="description">Description de l'événement</label>
+                <textarea id="description" name="description"></textarea>
+                {% if errors.description is defined %} {{ errors.description }} {% endif %}
+            </div>
+
+            <div>
+                <label for="latitude">Latitude du lieu</label>
+                <input type="number" id="latitude" name="latitude">
+                {% if errors.latitude is defined %} {{ errors.latitude }} {% endif %}
+            </div>
+
+            <div>
+                <label for="longitude">Longitude du lieu</label>
+                <input type="number" id="longitude" name="longitude">
+                {% if errors.longitude is defined %} {{ errors.longitude }} {% endif %}
+            </div>
+
+            <div>
+
+                <input type="submit" name="submit" value="Envoyer">
+
+            </div>
+        </form>
+
+    </section>
+
+    <script>
+        function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+
+{% endblock %}
