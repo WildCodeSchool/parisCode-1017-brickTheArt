@@ -24,34 +24,28 @@
 
             {# LES DERNIERES EXPOSITIONS Titre + Image + Titres images #}
 
-            <section class="home_highlights">
+                <section class="home_highlights">
 
                     <h2 class="section_title">Nos derniers passages</h2>
+                    <div class="home_headline">
+                        <div class="row row_home">
 
+                            {% for master in masterpiece %}
 
-
-                            <div class="home_headline">
-
-                                <div class="row row_home">
-
-                                    <div class = "col-md-6">
-                                        <figure>
-                                            <h3>Titre de l'image</h3>
-                                            <a href="https://placeholder.com"><img class="home_img" src="http://via.placeholder.com/555x420"></a>
-                                        </figure>
-                                    </div>
-
-                                    <div class = "col-md-6">
-                                        <figure>
-                                            <h3>Titre de l'image</h3>
-                                            <a href="https://placeholder.com"><img class="home_img" src="http://via.placeholder.com/555x420"></a>
-                                        </figure>
-                                    </div>
+                                <div class = "col-md-6">
+                                    <figure>
+                                        <h3>{{ master.title }}</h3>
+                                        <a href="uploads/{{ master.image }}"><img class="home_img" src="uploads/{{ master.image }}"></a>
+                                    </figure>
                                 </div>
-                            </div>
 
+                            {% endfor %}
 
-            </section>
+                        </div>
+                    </div>
+
+                </section>
+
             </div>
 
     {% endblock %}
