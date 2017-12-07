@@ -39,14 +39,14 @@ class MarkerManager extends EntityManager
      * Get markers from table Marker and use them in views
      * @return mixed
      */
-    public function getMarkers() {
-        $statement =$this->db->query('SELECT * FROM markers');
+    public function getMarker() {
+        $statement =$this->db->query('SELECT * FROM marker');
         return $statement->fetchAll(PDO::FETCH_CLASS, Marker::class);
     }
 
 
     public function deleteMarker($id){
-        $req=$this->db->prepare('DELETE FROM markers WHERE id= :id');
+        $req=$this->db->prepare('DELETE FROM marker WHERE id= :id');
         $req->execute(array(
             'id' => $id
         ));

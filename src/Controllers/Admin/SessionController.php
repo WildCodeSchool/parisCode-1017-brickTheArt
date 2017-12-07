@@ -5,6 +5,7 @@ namespace BrickTheArt\Controllers\Admin;
 use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
 use BrickTheArt\Model\Repository\InformationManager;
+use BrickTheArt\Model\Repository\MarkerManager;
 use BrickTheArt\Model\Repository\MasterpieceManager;
 
 /**
@@ -33,18 +34,21 @@ class SessionController extends DefaultController
         $contactManager = new ContactManager();
         $informationManager = new InformationManager();
         $masterpieceManager = new MasterpieceManager();
+        $markerManager = new MarkerManager();
 
         $coordonnees = $contactManager->getCoordonnees();
         $homeinformation = $informationManager->getHomeInformations();
         $conceptinformation = $informationManager->getConceptInformations();
         $masterpiece = $masterpieceManager->getMasterpiece();
+        $marker = $markerManager->getMarker();
 
 
         return $this->twig->render('admin/back_office_page1.html.twig', array(
             "coordonnees" => $coordonnees,
             "information_home" => $homeinformation,
             "information_concept" => $conceptinformation,
-            "masterpiece" => $masterpiece
+            "masterpiece" => $masterpiece,
+            "marker" => $marker
         ));
 
     }

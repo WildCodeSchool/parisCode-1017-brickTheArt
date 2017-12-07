@@ -43,19 +43,57 @@
 
     </section>
 
-    <script>
-        function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: uluru
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
+    <section>
+
+    <div id="map"></div>
+
+    </section>
+
+
+    {% for marker in markers %}
+
+        <script>
+
+            function initMap() {
+                var myLatLng = {lat: {{ markers.latitude }}, lng: {{ markers.longitude}} };
+
+                // Create a map object and specify the DOM element for display.
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: myLatLng,
+                    zoom: 4
+                });
+
+
+                var contentString = '<div id="content">' +
+                    '<div id=">'+'</div>' +
+                    '<h1 id="firstHeading" class="firstHeading">{{ markers.event}}</h1>' +
+                    '<div id="bodyContent">'+
+                    '<p>{{ markers.description }}</p>' +
+                    '</div>' +
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                })
+
+
+                // Create a marker and set its position.
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: myLatLng
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            }
+
+
+        </script>
+
+
+    {% endfor %}
+
+
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script>
