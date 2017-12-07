@@ -21,7 +21,7 @@
                 </div>
                 <p class="item-actions">
                     <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
-                    <a href="index.php?page=edit_contact" class="btn btn-primary" role="button">Editer</a>
+                    <a href="index.php?section=admin&page=edit_contact" class="btn btn-primary" role="button">Editer</a>
                 </p>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 </div>
                 <p class="item-actions">
                     <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
-                    <a href="index.php?page=edithome_admin" class="btn btn-primary" role="button">Editer</a>
+                    <a href="index.php?section=admin&page=edithome_admin" class="btn btn-primary" role="button">Editer</a>
                 </p>
             </div>
         </div>
@@ -59,7 +59,7 @@
             </div>
             <p class="item-actions">
                 <!-- Lien vers la page d'édition, ce dernier doit avoir une indication dans l'url  -->
-                <a href="index.php?page=edit_concept" class="btn btn-primary" role="button">Editer</a>
+                <a href="index.php?section=admin&page=edit_concept" class="btn btn-primary" role="button">Editer</a>
             </p>
         </div>
     </div>
@@ -90,8 +90,8 @@
                     <td><img class="img_masterpiece" src="uploads/{{ master.image }}"></td>
                     <td>{{ master.content }}</td>
                     
-                    <td><a href="index.php?page=edit_masterpiece&id={{ master.id }}"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="index.php?page=delete_masterpiece&id={{ master.id }}" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="index.php?section=admin&page=edit_masterpiece&id={{ master.id }}"><img src="../public/assets/pictures/admin/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="index.php?section=admin&page=delete_masterpiece&id={{ master.id }}" class="ask"><img src="../public/assets/pictures/admin/trash.png" alt="" title="" border="0" /></a></td>
 
                 </tr>
 
@@ -99,7 +99,7 @@
 
                 </tbody>
 
-                <a href="index.php?page=add_masterpiece" class="btn btn-primary" role="button"> Ajouter une nouvelle masterpiece</a>
+                <a href="index.php?section=admin&page=add_masterpiece" class="btn btn-primary" role="button"> Ajouter une nouvelle masterpiece</a>
 
             </table>
 

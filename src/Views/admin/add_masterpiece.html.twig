@@ -2,15 +2,11 @@
 
 {% block body %}
 
+    session_start();
+
 <h2>Ajouter une nouvelle Masterpiece</h2>
 
-    <script>
-
-
-
-    </script>
-
-    <form method="post" action="index.php?page=add_masterpiece" enctype="multipart/form-data">
+    <form method="post" action="index.php?section=admin&page=add_masterpiece" enctype="multipart/form-data">
 
         <label for="mon_fichier">Image (JPG, PNG| max. 1 Mo) :</label><br />
         <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
