@@ -84,7 +84,7 @@ if (isset ($_GET['page'])) {
             echo $markerController->addMarkerAction();
         }
 
-        if ($_GET['page' == 'delete_marker']) {
+        if ($_GET['page'] == 'delete_marker') {
            $markerController = new MarkerController();
            echo $markerController->deleteMarkerAction();
         }
