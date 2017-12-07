@@ -50,6 +50,7 @@ if (isset ($_GET['page'])) {
         }
 
         if(isset($_SESSION['login'])&& isset($_GET['section'])){
+
         if ($_GET['page'] == 'admin') {
         $sessionController = new SessionController();
         echo $sessionController->loginsuccessAction();
@@ -84,10 +85,10 @@ if (isset ($_GET['page'])) {
         $articleController = new ArticleController();
         echo $articleController->deleteMasterpieceAction();
         }
-
         }
+
         if ($_GET['page'] == 'logout') {
-            $sessionController = new SessionController();
-            echo $sessionController->logoutAction();
+        $sessionController = new SessionController();
+        echo $sessionController->logoutAction();
         }
 }
