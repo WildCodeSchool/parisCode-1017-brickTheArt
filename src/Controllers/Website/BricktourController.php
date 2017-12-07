@@ -4,6 +4,7 @@ namespace BrickTheArt\Controllers\Website;
 
 use BrickTheArt\Controllers\DefaultController;
 use BrickTheArt\Model\Repository\ContactManager;
+use BrickTheArt\Model\Repository\MarkerManager;
 
 /**
  * Class DefaultManagerController
@@ -17,15 +18,17 @@ class BricktourController extends DefaultController
     public function displayAction()
     {
         $contactManager = new ContactManager();
+        $markerManager = new MarkerManager();
+
         $coordonnees = $contactManager->getCoordonnees();
+        $markers = $markerManager->getMarker();
         return $this->twig->render('user/bricktour.html.twig', array(
-            "coordonnees" => $coordonnees
+            "coordonnees" => $coordonnees,
+            "markers" => $markers
         ));
 
     }
 
 
-
-    //gestion des erreurs, avec au départ $errors = 0. (header:"Location:index.php?page=success", etc)
 
 }
