@@ -83,7 +83,7 @@ class ArticleController extends DefaultController
             $masterpiecemanager = new MasterpieceManager();
             $masterpiecemanager->updateMasterpiece($id, $title, $content);
             //renvoi à la page admin si succès
-            header('Location: index.php?section=admin&section=admin&page=admin');
+            header('Location: index.php?section=admin&page=admin');
 
 //GESTION DES ERREURS
             //SI MESSAGE DERREUR
