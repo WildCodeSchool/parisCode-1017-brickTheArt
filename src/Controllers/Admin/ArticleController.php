@@ -54,8 +54,8 @@ class ArticleController extends DefaultController
                     ));
                 } else{
                     //requete BDD
-                    $masterpiecemanager = new MasterpieceManager();
-                    $masterpiecemanager->addMasterpiece($title, $content, $uploadedfile->getFileName());
+                    $masterpieceManager = new MasterpieceManager();
+                    $masterpieceManager->addMasterpiece($title, $content, $uploadedfile->getFileName());
 
                     header('Location: index.php?section=admin&page=admin');
                 }
@@ -126,8 +126,8 @@ class ArticleController extends DefaultController
         // Vérification que le paramètre id est bien un nombre (sécurité) et Si c'est bien un nombre, on traite la demande
         if (is_numeric($id)) {
             // Appel de la fonction du model permettant de supprimer une image précise
-            $masterpiecemanager = new MasterpieceManager();
-            $masterpiecemanager->deleteMasterpiece($id);
+            $masterpieceManager = new MasterpieceManager();
+            $masterpieceManager->deleteMasterpiece($id);
 
             //renvoi à la page admin si succès
             header('Location: index.php?section=admin&page=admin');

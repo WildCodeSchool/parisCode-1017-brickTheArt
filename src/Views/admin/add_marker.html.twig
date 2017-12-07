@@ -1,0 +1,102 @@
+{% extends 'layout_admin.html.twig'  %}
+
+{% block body %}
+
+
+    <h3>Ajoutez une nouvelle étape au Brick Tour !</h3>
+
+    <div id="map"></div>
+
+    <section>
+
+        <form method="post" action="index.php?page=add_marker">
+            <div>
+                <label for="event">Nom de l'événement</label>
+                <input type="text" id="event" name="event">
+                {% if errors.event is defined %} {{ errors.event }} {% endif %}
+            </div>
+
+            <div>
+                <label for="description">Description de l'événement</label>
+                <textarea id="description" name="description"></textarea>
+                {% if errors.description is defined %} {{ errors.description }} {% endif %}
+            </div>
+
+            <div>
+                <label for="latitude">Latitude du lieu</label>
+                <input type="text" id="latitude" name="latitude">
+                {% if errors.latitude is defined %} {{ errors.latitude }} {% endif %}
+            </div>
+
+            <div>
+                <label for="longitude">Longitude du lieu</label>
+                <input type="text" id="longitude" name="longitude">
+                {% if errors.longitude is defined %} {{ errors.longitude }} {% endif %}
+            </div>
+
+            <div>
+
+                <input type="submit" name="submit" value="Envoyer">
+
+            </div>
+        </form>
+
+    </section>
+
+    <section>
+
+    <div id="map"></div>
+
+    </section>
+
+
+    {% for marker in markers %}
+
+        <script>
+
+            function initMap() {
+                var myLatLng = {lat: {{ markers.latitude }}, lng: {{ markers.longitude}} };
+
+                // Create a map object and specify the DOM element for display.
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: myLatLng,
+                    zoom: 4
+                });
+
+
+                var contentString = '<div id="content">' +
+                    '<div id=">'+'</div>' +
+                    '<h1 id="firstHeading" class="firstHeading">{{ markers.event}}</h1>' +
+                    '<div id="bodyContent">'+
+                    '<p>{{ markers.description }}</p>' +
+                    '</div>' +
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                })
+
+
+                // Create a marker and set its position.
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: myLatLng
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            }
+
+
+        </script>
+
+
+    {% endfor %}
+
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+
+{% endblock %}

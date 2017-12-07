@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.35, for osx10.9 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: projet2
 -- ------------------------------------------------------
--- Server version	5.6.35
+-- Server version	5.7.20-0ubuntu0.17.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,14 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Current Database: `projet2`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `projet2` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `projet2`;
 
 --
 -- Table structure for table `contact_information`
@@ -81,12 +73,12 @@ DROP TABLE IF EXISTS `marker`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marker` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) DEFAULT NULL,
-  `adress` varchar(255) DEFAULT NULL,
-  `lat` decimal(10,8) NOT NULL,
-  `lng` decimal(11,8) NOT NULL,
+  `latitude` float DEFAULT NULL,
+  `longitude` float DEFAULT NULL,
+  `event` varchar(45) DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +87,7 @@ CREATE TABLE `marker` (
 
 LOCK TABLES `marker` WRITE;
 /*!40000 ALTER TABLE `marker` DISABLE KEYS */;
+INSERT INTO `marker` VALUES (1,55.8642,-4.25181,'BrickTheArt visite Glasgow','Pour la première fois, le Lego Truck se posera en Ecosse !'),(2,45.4408,12.3155,'Enfin à Venise','Et si nous faisions tenir notre construction sur une gondole en circulation ?');
 /*!40000 ALTER TABLE `marker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-28 10:43:41
+-- Dump completed on 2017-12-06 17:21:01
