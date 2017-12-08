@@ -63,7 +63,7 @@ class ContactController extends DefaultController
                 $message = (new \Swift_Message('Another brick in the wall'))
                     ->setFrom([$email => $firstname . $lastname])
                     ->setTo(['receiver@domain.org', 'other@domain.org' => 'Brick The Art'])
-                    ->setBody($firstname. 'de'. $city. 'vous a écrit :'.$message )
+                    ->setBody($firstname. ' de '. $city. ' vous a écrit :'.$message )
                 ;
 
                 // Send the message
