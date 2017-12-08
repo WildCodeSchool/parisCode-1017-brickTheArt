@@ -20,7 +20,8 @@ class MarkerController extends DefaultController
      */
     public function addMarkerAction()
     {
-
+        $markerManager = new MarkerManager();
+        $markers = $markerManager->getMarker();
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errors = [];
@@ -43,14 +44,16 @@ class MarkerController extends DefaultController
                 $longitude = $_POST['longitude'];
 
                 //On envoie le nouveau marker en base de données en instanciant un nouvel objet/élément de la classe/entité 'Marker'
-                $markerManager = new MarkerManager();
+
                 $markerManager->addMarker($event, $description, $latitude, $longitude);
 
-                header('Location: index.php?page=admin');
+                header('Location: index.php?section=admin&page=admin');
             }
 
         } else {
-            return $this->twig->render('admin/add_marker.html.twig');
+            return $this->twig->render('admin/add_marker.html.twig', array(
+                "markers" => $markers
+            ));
 
         }
 
@@ -61,13 +64,14 @@ class MarkerController extends DefaultController
     public function deleteMarkerAction(){
         //Récupération de l'id du marker à supprimer
         $id = $_GET['id'];
+
         //Vérification que le paramètre 'id' est bien un nombre (sécurité) et si c'est un nombre on traite la requête
         if (is_numeric($id)) {
             $markerManager = new MarkerManager();
             $markerManager->deleteMarker($id);
 
             //renvoi à la page admin si succès
-            header('Location: index.php?page=admin');
+            header('Location: index.php?section=admin&page=admin');
         } else {
             header('Location: index.php');
         }
