@@ -49,4 +49,12 @@ h2{
 
 th, td {
     text-align: center;
+
+.logout {
+    background-color: #e74c3c;
+    border-radius: 10px;
+    color: #000;
 }
+
+.logout:hover {
+    color: #707b7c;

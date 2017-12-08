@@ -46,9 +46,6 @@ class MasterpieceManager extends EntityManager
         return $statement->fetchAll(PDO::FETCH_CLASS, Masterpiece::class);
     }
 
-
-
-
     /**
      * Suppression d'une masterpiece
      * @param  [int] $id Id de la masterpiece
