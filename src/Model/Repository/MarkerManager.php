@@ -35,20 +35,31 @@ class MarkerManager extends EntityManager
 
     }
 
+    public function getOneMarker($id) {
+        $statement = $this->db->prepare('SELECT * FROM marker WHERE id =:id');
+        $statement->execute(array(
+            ':id' => $id
+        ));
+        return $statement->fetchObject(Marker::class);
+    }
+
     /**
-     * Get markers from table Marker and use them in views
+     * Get all markers from table Marker and use them in views
      * @return mixed
      */
     public function getMarker() {
-        $statement =$this->db->query('SELECT * FROM marker');
+        $statement= $this->db->query('SELECT * FROM marker');
         return $statement->fetchAll(PDO::FETCH_CLASS, Marker::class);
     }
 
 
+
+
     public function deleteMarker($id){
-        $req=$this->db->prepare('DELETE FROM marker WHERE id= :id');
+
+        $req=$this->db->prepare('DELETE FROM marker WHERE id=:id');
         $req->execute(array(
-            'id' => $id
+            ':id' => $id
         ));
     }
 

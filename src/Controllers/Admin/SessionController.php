@@ -69,6 +69,7 @@ class SessionController extends DefaultController
      */
     public function loginSuccessAction()
     {
+
         $contactManager = new ContactManager();
         $informationManager = new InformationManager();
         $masterpieceManager = new MasterpieceManager();
@@ -80,13 +81,13 @@ class SessionController extends DefaultController
         $masterpiece = $masterpieceManager->getMasterpiece();
         $marker = $markerManager->getMarker();
 
-
         return $this->twig->render('admin/back_office_page1.html.twig', array(
             "coordonnees" => $coordonnees,
             "information_home" => $homeinformation,
             "information_concept" => $conceptinformation,
             "masterpiece" => $masterpiece,
-            "marker" => $marker
+            "marker" => $marker,
+            "session"=>$_SESSION,
         ));
     }
 
@@ -104,11 +105,6 @@ class SessionController extends DefaultController
             $phone = $_POST['phone'];
             $adress = $_POST['address'];
             $opening = $_POST['hours'];
-
-            /*gestion des erreurs A VOIR
-            if (!preg_match('#^0[1-68][0-9]{8}$#', $phone)) {
-                $errors['phone'] = "Merci de saisir un téléphone valide";
-            }*/
 
             $contactManager->updateCoordonnees($phone, $adress, $opening);
             header("Location: index.php?section=admin&page=admin");
