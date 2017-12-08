@@ -31,6 +31,8 @@ body {
     -webkit-flex-direction: column;
     height: 100%;
     font-family: 'Lato', Lucida sans unicode, sans-serif;
+    line-height: 1.7;
+
 }
 
 @font-face {
@@ -263,8 +265,6 @@ footer h5{
     color: #fff;
 }
 
-
-
 .col_footer{
     text-align: center;
 }
@@ -281,8 +281,6 @@ footer h5{
     transform: scale(1.3);
 }
 
-
-
 @font-face {
     font-family: 'si';
     src: url('../css/fonts/socicon/socicon.eot');
@@ -293,7 +291,6 @@ footer h5{
     font-weight: normal;
     font-style: normal;
 }
-
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
