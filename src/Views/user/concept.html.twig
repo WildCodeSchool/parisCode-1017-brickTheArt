@@ -21,10 +21,10 @@
 
                     <div class="concept col-md-6 col-xs-12">
 
-                        <h3 class="article_title">{{ master.title }}</h3>
+                        <h3  id="{{ master.title }}" class="article_title">{{ master.title }}</h3>
 
                         <figure>
-                            <img class="concept_img" src="{{ master.image }}" alt="#"/>
+                            <img class="concept_img" src="uploads/{{ master.image }}" alt="{{ master.title }}"/>
                         </figure>
 
                         <p>{{ master.content }}</p>

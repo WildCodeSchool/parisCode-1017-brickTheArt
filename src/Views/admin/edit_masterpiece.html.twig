@@ -1,18 +1,24 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block body %}
-    <section>
-        <h2>Articles page concept</h2>
 
-        <form method="post" action="index.php?section=admin&page=edit_concept">
+    <section>
+
+        <form method="post" action="index.php?section=admin&page=edit_masterpiece&id={{ masterpiece.id }}">
 
             <div class="form-group">
                 <div class="row">
                     <div class = "col-md-12">
                         <label for="phone">Information</label>
-                        <textarea name="content" rows="8" cols="80" class="form-control" id="content">{{ information_concept.concept }}</textarea>
+                        <textarea name="description" rows="8" cols="80" class="form-control" id="content">{{ masterpiece.content }}</textarea>
                     </div>
                 </div>
+                <div class="row">
+                    <div class = "col-md-2">
+                        <input type="text" name="titre" value="{{ masterpiece.title }}">
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class = "col-md-2">
                         <button type="submit" class="btn btn-primary" role="button">Modifier</button>
