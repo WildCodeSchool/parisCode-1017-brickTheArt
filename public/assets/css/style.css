@@ -160,8 +160,8 @@ body {
 }
 
 .home_img {
-    width: 250px;
-    height: 120px;
+    width: 550px;
+    height: 450px;
     margin-bottom: 80px;
 }
 
@@ -196,7 +196,6 @@ body {
 
 #map {
     height: 450px;
-
 }
 
 /************************************************\
