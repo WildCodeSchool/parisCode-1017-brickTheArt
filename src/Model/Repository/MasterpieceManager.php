@@ -38,6 +38,13 @@ class MasterpieceManager extends EntityManager
         return $statement->fetchObject( Masterpiece::class);
     }
 
+    public function getMasterpieceConcept()
+    {
+
+        $statement = $this->db->query('SELECT * FROM masterpiece ORDER BY RAND() LIMIT 2');
+        return $statement->fetchAll(PDO::FETCH_CLASS, Masterpiece::class);
+    }
+
 
     public function getMasterpiece()
     {
