@@ -160,7 +160,8 @@ body {
 }
 
 .home_img {
-    width: 100%;
+    width: 250px;
+    height: 120px;
     margin-bottom: 80px;
 }
 
