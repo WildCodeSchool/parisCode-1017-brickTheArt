@@ -3,33 +3,31 @@
 {% block body %}
 
 
-    <h3>Ajoutez une nouvelle étape au Brick Tour !</h3>
-
-    <div id="map"></div>
+    <h2>Ajoutez une nouvelle étape au Brick Tour !</h2>
 
     <section>
 
-        <form method="post" action="index.php?page=add_marker">
+        <form method="post" action="index.php?section=admin&page=add_marker">
             <div>
-                <label for="event">Nom de l'événement</label>
+                <label for="event">Nom de l'événement</label><br />
                 <input type="text" id="event" name="event">
                 {% if errors.event is defined %} {{ errors.event }} {% endif %}
             </div>
 
             <div>
-                <label for="description">Description de l'événement</label>
+                <label for="description">Description de l'événement</label><br />
                 <textarea id="description" name="description"></textarea>
                 {% if errors.description is defined %} {{ errors.description }} {% endif %}
             </div>
 
             <div>
-                <label for="latitude">Latitude du lieu</label>
+                <label for="latitude">Latitude du lieu</label><br />
                 <input type="text" id="latitude" name="latitude">
                 {% if errors.latitude is defined %} {{ errors.latitude }} {% endif %}
             </div>
 
             <div>
-                <label for="longitude">Longitude du lieu</label>
+                <label for="longitude">Longitude du lieu</label><br />
                 <input type="text" id="longitude" name="longitude">
                 {% if errors.longitude is defined %} {{ errors.longitude }} {% endif %}
             </div>
@@ -50,12 +48,10 @@
     </section>
 
 
-    {% for marker in markers %}
-
         <script>
 
             function initMap() {
-                var myLatLng = {lat: {{ markers.latitude }}, lng: {{ markers.longitude}} };
+                var myLatLng = { lat: 48.896391, lng: 2.160098 };
 
                 // Create a map object and specify the DOM element for display.
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -64,38 +60,54 @@
                 });
 
 
+
+                {% for marker in markers %}
+
+
                 var contentString = '<div id="content">' +
-                    '<div id=">'+'</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">{{ markers.event}}</h1>' +
+                    '<div id="">'+'</div>' +
+                    '<h1 id="firstHeading" class="firstHeading">{{ marker.event}}</h1>' +
                     '<div id="bodyContent">'+
-                    '<p>{{ markers.description }}</p>' +
+                    '<p>{{ marker.description }}</p>' +
                     '</div>' +
                     '</div>';
-
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                })
-
 
                 // Create a marker and set its position.
                 var marker = new google.maps.Marker({
                     map: map,
-                    position: myLatLng
+                    position: {lat : {{marker.latitude}}, lng : {{ marker.longitude }} }
                 });
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
+
+
+                var infoWindow = new google.maps.InfoWindow();
+                //Attach click event to the marker.
+                (function (marker, contentString) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                        infoWindow.setContent(contentString);
+                        infoWindow.open(map, marker);
+                    });
+
+                    google.maps.event.addListener(map, 'click', function() {
+                        infoWindow.close();
+                    });
+                })(marker, contentString);
+
+
+
+
+                {% endfor %}
             }
 
 
         </script>
 
 
-    {% endfor %}
 
 
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGmiahyprb9BNvQrzrx55oLR6IaTUZjoQ&callback=initMap">
     </script>
 
 
