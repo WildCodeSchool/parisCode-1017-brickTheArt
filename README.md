@@ -1,4 +1,4 @@
-##How to install the project
+## How to install the project
 
 Install composer: https://getcomposer.org/download/
 
